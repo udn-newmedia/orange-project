@@ -2,7 +2,7 @@
   <div id="app">
     <Indicator color='#ff9a57'></Indicator>
     <HeadBar MenuSlideFrom='right' color="#fff" background-color="#ffbd6e" href='https://udn.com/upf/newmedia/2018_data/elderhome/'></HeadBar>
-    <Cover title="回甘大人 熟齡的新生活學" subtitle='' position='bottom' style="background-color: #000" :bg='cover_1_m' :bgweb="cover_1">
+    <Cover title="回甘大人" subtitle="熟齡的新生活學" position='bottom' style="background-color: #000" :bg='cover_1_m' :bgweb="cover_1">
       <Share href='./index.html'></Share>
     </Cover>
     <Banner background-color="#515151" :src='ImgBanner'></Banner>
@@ -126,7 +126,7 @@ export default {
 #app {
   font-size: 16px;
   line-height: 1.5;
-  font-family: Arial, "微軟正黑體", sans-serif;
+  font-family: Arial, Microsoft JhengHei, sans-serif;
   word-wrap: break-word;
   text-align: justify;
   height: 100vh;
