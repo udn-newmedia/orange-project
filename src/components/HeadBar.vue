@@ -4,7 +4,7 @@
             <a href="./index.html"><i class="udn-icon udn-icon-logo" :style="{color: color}"></i></a>
         </div>
         <div id="hbutton-contain" :class="{transformToNone: isOpen}" :style="{transform: menuSlideDirection, backgroundColor: backgroundColor}">
-	    	<div class="scrollTo-Btn" v-for='title in getTitle' :style="{color: color, backgroundColor: backgroundColor}" @click="handleScrollTo(title.title)">{{title.title}}</div>
+	    	<div class="scrollTo-Btn" v-for='title in getTitle' :style="{color: color, backgroundColor: backgroundColor, borderColor: color}" @click="handleScrollTo(title.title)">{{title.title}}</div>
             <div class="linkOut" :style="{color: color, backgroundColor: backgroundColor}">
 	    		<slot></slot>
 	    	</div>
@@ -66,7 +66,7 @@ export default {
     },
     methods: {
         iconSrc: function(mob, pc){
-            if(window.innerWidth < 1024) {
+            if(window.innerWidth < 1025) {
                 return mob 
             } else {
                 return pc

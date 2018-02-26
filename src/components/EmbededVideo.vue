@@ -206,16 +206,19 @@ video::-webkit-media-controls-fullscreen-button {
     display: none;
 }
 .video-contain{
+    position: relative;
     background: rgb(236, 234, 234);
     position: relative;
     margin-bottom: 10px;
     height: 100%;
+    overflow: hidden;
 }
 video{
     width: 100%;
     height: 100%;
-    object-fit: fill;
     cursor: pointer;
+    object-fit: cover;
+    object-position: top left;
 }
 .video-control{
   position: relative;

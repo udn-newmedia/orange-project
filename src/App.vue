@@ -6,10 +6,10 @@
       <Share href='./index.html'></Share>
     </Cover>
     <Banner background-color="#515151" :src='ImgBanner'></Banner>
-    <ReadMore menu-text="找認同" position='left' href="www.facebook.com" title-color="rgba(99,186,134,0.8)" fontColor="#fff" useReadMore='yes'
+    <ReadMore menu-text="找青春" position='left' title-color="rgba(99,186,134,0.8)" href="www.facebook.com" useReadMore='yes'
+              :bg='cover_3_m' :bgweb="cover_3" title="練肌肉、穿韓版服飾 " subtitle="不服老的回甘人生"></ReadMore>    
+    <ReadMore menu-text="找認同" position='right' href="www.facebook.com" title-color="rgba(99,186,134,0.8)" fontColor="#fff" useReadMore='yes'
               :bg='cover_2_m' :bgweb="cover_2" title="橘色世代滑出存在感" subtitle="渴望「向下認同」"></ReadMore>
-    <ReadMore menu-text="找青春" position='right' title-color="rgba(99,186,134,0.8)" href="www.facebook.com" useReadMore='yes'
-              :bg='cover_3_m' :bgweb="cover_3" title="練肌肉、穿韓版服飾 " subtitle="不服老的回甘人生"></ReadMore>
     <PhotoLink title="名人的理想生活" imgStart="right" menuText="名人樂活"
     :img1="people_1" mainTitle1='李昂'   subTitle1='老後生活你儲存愛情了嗎?'    href1='https://www.youtube.com/watch?v=bMnazmyqkqw'
     :img2='people_2' mainTitle2='岑永康' subTitle2='空巢期到南美來場拉丁式冒險' href2='https://www.youtube.com/watch?v=bMnazmyqkqw'
@@ -37,8 +37,8 @@
         <Relate title="延伸閱讀" color="#363434" 
             href1="https://health.udn.com/health/story/6006/2983486" :img1="relate_1" text1="退休老師寫自傳 找回心中缺角" 
             href2="https://health.udn.com/health/story/6006/2813024" :img2="relate_2" text2="給智慧銀髮族：早安圖、幸運信不要再傳啦" 
-            href3="https://health.udn.com/health/story/6006/2986764" :img3="relate_1" text3="想要老後人緣好 請改掉這兩個口頭禪" 
-            href4="https://health.udn.com/health/story/6006/2945396" :img4="relate_2" text4="你會取笑想找個「老伴」的心情嗎？正視銀髮族的親密需求" > 
+            href3="https://udn.com/news/story/6885/1686304" img3="https://goo.gl/huhQbc" text3="看準退休族消費經濟 私校搶橘色商機" 
+            href4="https://udn.com/news/story/7241/2975251" img4="https://goo.gl/Wa7JUU" text4="春節橘色高齡族群商機 「宅經濟」最夯" > 
         </Relate>
         <p><br/></p>
         <Fb-Comment></Fb-Comment>
@@ -116,9 +116,6 @@ export default {
       videoPC: video_pc
     }
   },
-  mounted() {
-    console.log(Content)
-  }
 }
 </script>
 
