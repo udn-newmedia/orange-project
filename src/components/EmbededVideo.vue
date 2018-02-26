@@ -127,6 +127,7 @@ export default {
       if (thisvideoTop < 300 && thisvideoBottom > 300) {
         if (thisvideo.paused) {
           thisvideo.play()
+          this.getPlayingProgress()
         }
       } else {
         if (!thisvideo.paused) {

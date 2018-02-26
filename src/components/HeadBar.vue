@@ -21,10 +21,10 @@
         </div>
         <div class="btnBox">
             <div class="shareBtn" @click='fbShare'>
-                <img :src="iconSrc(fbIcon, fbIconPC)" alt="點擊我用facebook分享">
+                <img :src="iconSrc(fbIcon, fbIconPC)" alt="點擊我用facebook分享" title="點擊我用facebook分享">
             </div>
             <div class='shareBtn' @click='lineShare'>
-                <img :src="iconSrc(lineIcon, lineIconPC)" alt="點擊我用line分享">
+                <img :src="iconSrc(lineIcon, lineIconPC)" alt="點擊我用line分享" title="點擊我用line分享">
             </div>
             <div id="hbutton" class="hidden-lg">
                 <div class="nav-icon" :class="{open: isOpen}"

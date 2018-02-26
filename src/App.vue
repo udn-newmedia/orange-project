@@ -10,7 +10,7 @@
               :bg='cover_3_m' :bgweb="cover_3" title="練肌肉、穿韓版服飾 " subtitle="不服老的回甘人生"></ReadMore>    
     <ReadMore menu-text="找認同" position='right' href="www.facebook.com" title-color="rgba(99,186,134,0.8)" fontColor="#fff" useReadMore='yes'
               :bg='cover_2_m' :bgweb="cover_2" title="橘色世代滑出存在感" subtitle="渴望「向下認同」"></ReadMore>
-    <PhotoLink title="名人的理想生活" imgStart="right" menuText="名人樂活"
+    <PhotoLink title="名人的理想生活" imgStart="left" menuText="名人樂活"
     :img1="people_1" mainTitle1='李昂'   subTitle1='老後生活你儲存愛情了嗎?'    href1='https://www.youtube.com/watch?v=bMnazmyqkqw'
     :img2='people_2' mainTitle2='岑永康' subTitle2='空巢期到南美來場拉丁式冒險' href2='https://www.youtube.com/watch?v=bMnazmyqkqw'
     :img3='people_3' mainTitle3='陳建仁' subTitle3='遠離「失重感」退休也要有夢' href3='https://goo.gl/jLpogP'></PhotoLink>
@@ -25,20 +25,21 @@
         <Logo></Logo>
         <p><br/></p>
         <Editor>
-            <div>製作人：吳思萍、蔡佩蓉、舒懷緯</div>
+            <div>製作人：吳思萍、蔡佩蓉</div>
             <div>視覺設計：呂紹齊</div>
             <div>網頁製作：廖克樸</div>
+            <div>影音：呂紹齊、蘇士堯、舒懷緯</div>
             <div>攝影：侯永全、陳柏亨</div>
             <div>圖片來源：<a href="https://tw.123rf.com/" style="color: gray;text-decoration: none" target="_blank">123RF</a></div>
             <div>監製：董谷音、蔡幸怡</div>
-            <div>2017.10.30</div>
+            <div>2018.03.15</div>
         </Editor>
         <p><br/></p>
         <Relate title="延伸閱讀" color="#363434" 
             href1="https://health.udn.com/health/story/6006/2983486" :img1="relate_1" text1="退休老師寫自傳 找回心中缺角" 
             href2="https://health.udn.com/health/story/6006/2813024" :img2="relate_2" text2="給智慧銀髮族：早安圖、幸運信不要再傳啦" 
             href3="https://udn.com/news/story/6885/1686304" img3="https://goo.gl/huhQbc" text3="看準退休族消費經濟 私校搶橘色商機" 
-            href4="https://udn.com/news/story/7241/2975251" img4="https://goo.gl/Wa7JUU" text4="春節橘色高齡族群商機 「宅經濟」最夯" > 
+            href4="https://udn.com/news/story/7241/2975251" img4="https://goo.gl/Wa7JUU" text4="春節橘色高齡族群商機 「宅經濟」最夯"> 
         </Relate>
         <p><br/></p>
         <Fb-Comment></Fb-Comment>

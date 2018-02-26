@@ -2,7 +2,7 @@
 	<div class="mainPage" :id="menuText">
 		<h2>如何過熟齡理想生活</h2>
 		<div class="btnBox">
-			<div class="circularBtn" v-for="btn in btnBox">
+			<div class="circularBtn" v-for="(btn, index) in btnBox" @click="sendGA(index)">
 				<a :href="btn.link" target="_blank"></a>
 				<img :src="btn.img">
 				<p>{{btn.text}}</p>
@@ -17,6 +17,8 @@ import btn4_1 from '../assets/carousel/btn4_1.png'
 import btn4_2 from '../assets/carousel/btn4_2.png'
 import btn4_3 from '../assets/carousel/btn4_3.png'
 import btn4_4 from '../assets/carousel/btn4_4.png'
+
+import Utils from 'udn-newmedia-utils'
 export default {
 
   name: 'goodLife',
@@ -53,7 +55,16 @@ export default {
       Bus.$emit('emitHeadbarTitle', {
         title: self.menuText
       })
-    },  	
+    },
+    sendGA: function(i) {
+    	const self = this
+        ga("send", {
+            "hitType": "event",
+            "eventCategory": "超連結",
+            "eventAction": "click",
+            "eventLabel": "[" + Utils.detectPlatform() + "] [" + document.querySelector('title').innerHTML + "] [" + self.btnBox[i].link + "] ["+ self.btnBox[i].text +"]"
+        });   	
+    }
   },
   mounted() {
   	this.handle_Emit()
@@ -152,7 +163,7 @@ p > br {
 }
 @media screen and (min-width: 1024px) {
 	h2{
-		font-size: 92px;
+		font-size: 82px;
 		margin-top: 0;
 		margin-bottom: 5%;
 	}

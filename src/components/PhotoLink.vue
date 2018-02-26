@@ -5,7 +5,7 @@
 			<div class="PhotoLink" v-for="(person, index) in people" :class="{pActive: person.isActive, pSec: person.isSec}" :style="{left: index * layoutRWD() + '%'}">
 				<div class="pGlass" v-show='!person.isActive' @click='handle_click(index)'></div>
 				<div class="pContent" :style="{backgroundImage: 'url('+ person.img +')'}">
-					<a :href="person.href" target="_blank"></a>
+					<a :href="person.href" target="_blank" @click.prevent='sendGA(index)'></a>
 					<div class="imgSay">
 						<h3 class="mainTitle">{{person.mainTitle}}</h3>
 						<h3 class="subTitle">{{person.subTitle}}</h3>
@@ -24,6 +24,7 @@
 
 <script>
 import Bus from '../eventBus.js'
+import Utils from 'udn-newmedia-utils'
 export default {
 
   name: 'PhotoLink',
@@ -67,7 +68,17 @@ export default {
       Bus.$emit('emitHeadbarTitle', {
         title: self.menuText
       })
-    },  	  	
+    },
+    sendGA: function(i){
+    	const self = this
+        ga("send", {
+            "hitType": "event",
+            "eventCategory": "超連結",
+            "eventAction": "click",
+            "eventLabel": "[" + Utils.detectPlatform() + "] [" + document.querySelector('title').innerHTML + "] [" + self.people[i].href + "] ["+ self.people[i].mainTitle +"]"
+        });   	    	
+        console.log("[" + Utils.detectPlatform() + "] [" + document.querySelector('title').innerHTML + "] [" + self.people[i].href + "] ["+ self.people[i].mainTitle +"]")
+    },
   	get_Index: function() {
   		const peopleLength = this.people.length
   		for(let i = 0; i < peopleLength; i++){

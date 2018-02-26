@@ -5,7 +5,8 @@
 			<h2>{{subtitle}}</h2>
 			<div class="leftBorder" :style="{borderColor: titleColor}"></div>
 			<div class="rightBorder" :style="{borderColor: titleColor}"></div>
-			<a v-if="useReadMore" :href='href' target="_blank">{{text}}</a>
+			<span v-if="useReadMore" class="toRead">{{text}}</span>
+			<a class="linkBlock" :href='href' target="_blank" @click.prevent='sendGA()'></a>
 		</div>
 		<div class="forVideo">
 			<EmbededVideo v-if="isVideo" :src="src" :srcWeb="srcWeb" :poster="poster" :posterWeb="posterWeb" customControl="yes" controlColor="#ff9a57"></EmbededVideo>
@@ -15,6 +16,7 @@
 
 <script>
 import Bus from '../eventBus.js'
+import Utils from 'udn-newmedia-utils'
 import EmbededVideo from './EmbededVideo.vue'
 export default {
 
@@ -59,6 +61,15 @@ export default {
           return this.bgweb
       }
     },
+    sendGA: function(i) {
+    	const self = this
+        ga("send", {
+            "hitType": "event",
+            "eventCategory": "超連結",
+            "eventAction": "click",
+            "eventLabel": "[" + Utils.detectPlatform() + "] [" + document.querySelector('title').innerHTML + "] [" + self.href + "] ["+ self.title +"]"
+        });
+    },
   	handle_resize: function() {
   		this.$forceUpdate()
   	},
@@ -82,6 +93,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.linkBlock{
+	position: absolute;
+	z-inde: 50;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
 .forVideo{
 	position: absolute;
 	top: 0;
@@ -115,7 +134,7 @@ export default {
 		line-height: 32px;
 		color: inherit;
 	}
-	a{
+	.toRead{
 		position: absolute;
 		right: 5px;
 		bottom: 5px;
@@ -161,7 +180,7 @@ export default {
 		h2{
 			font-size: 30px;
 		}
-		a{
+		.toRead{
 			right: 10px;
 			bottom: 10px;
 			font-size: 21px;
