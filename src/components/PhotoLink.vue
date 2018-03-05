@@ -168,7 +168,7 @@ export default {
 		position: absolute;
 		z-index: 30;
 		top: 20px;
-		left: 15px;
+		left: 20px;
 		text-align: left;
 		font-size: 42px;
 		line-height: 1.5;
@@ -292,6 +292,7 @@ export default {
 			width: auto;
 			font-size: 70px;
 			top: 70px;
+			left: 30px;
 		}
 	}
 	.PhotoLink{

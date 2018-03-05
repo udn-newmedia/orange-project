@@ -219,7 +219,7 @@ video{
     height: 100%;
     cursor: pointer;
     object-fit: cover;
-    object-position: top left;
+    object-position: center center;
 }
 .video-control{
   position: relative;
