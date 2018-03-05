@@ -1,15 +1,15 @@
 <template>
   <div id="app">
     <Indicator color='#ff9a57'></Indicator>
-    <HeadBar MenuSlideFrom='right' color="#fff" background-color="#ffbd6e" href='https://udn.com/upf/newmedia/2018_data/elderhome/'></HeadBar>
+    <HeadBar MenuSlideFrom='right' color="#fff" background-color="#ffbd6e" href='https://udn.com/upf/newmedia/2018_data/orange-project/index.html'></HeadBar>
     <Cover title="回甘大人" subtitle="熟齡的新生活學" position='bottom' style="background-color: #000" :bg='cover_1_m' :bgweb="cover_1">
-      <Share href='./index.html'></Share>
+      <Share href='https://udn.com/upf/newmedia/2018_data/orange-project/index.html'></Share>
     </Cover>
     <Banner background-color="#515151" :src='ImgBanner'></Banner>
-    <ReadMore menu-text="找青春" position='left' title-color="rgba(99,186,134,0.8)" href="www.facebook.com" useReadMore='yes'
-              :bg='cover_3_m' :bgweb="cover_3" title="練肌肉、穿韓版服飾 " subtitle="不服老的回甘人生"></ReadMore>    
     <ReadMore menu-text="找認同" position='right' href="www.facebook.com" title-color="rgba(99,186,134,0.8)" fontColor="#fff" useReadMore='yes'
-              :bg='cover_2_m' :bgweb="cover_2" title="橘色世代滑出存在感" subtitle="渴望「向下認同」"></ReadMore>
+              :bg='cover_3_m' :bgweb="cover_3" title="橘色世代滑出存在感" subtitle="渴望「向下認同」"></ReadMore>    
+    <ReadMore menu-text="找青春" position='left' title-color="rgba(99,186,134,0.8)" href="www.facebook.com" useReadMore='yes'
+              :bg='cover_2_m' :bgweb="cover_2" title="練肌肉、穿韓版服飾 " subtitle="不服老的回甘人生"></ReadMore>    
     <PhotoLink title="名人的理想生活" imgStart="left" menuText="名人樂活"
     :img1="people_1" mainTitle1='李昂'   subTitle1='老後生活你儲存愛情了嗎?'    href1='https://www.youtube.com/watch?v=bMnazmyqkqw'
     :img2='people_2' mainTitle2='岑永康' subTitle2='空巢期到南美來場拉丁式冒險' href2='https://www.youtube.com/watch?v=bMnazmyqkqw'
@@ -21,7 +21,7 @@
               :bg='cover_4_m' :bgweb="cover_4" title="三大退休族" subtitle="達人教你理財術"></ReadMore>           
     <Content background-color="#FFFFFF">
         <p><br/></p>
-        <Share href="./index.html"></Share>
+        <Share href="https://udn.com/upf/newmedia/2018_data/orange-project/index.html"></Share>
         <Logo></Logo>
         <p><br/></p>
         <Editor>
@@ -36,13 +36,13 @@
         </Editor>
         <p><br/></p>
         <Relate title="延伸閱讀" color="#363434" 
-            href1="https://health.udn.com/health/story/6006/2983486" :img1="relate_1" text1="退休老師寫自傳 找回心中缺角" 
-            href2="https://health.udn.com/health/story/6006/2813024" :img2="relate_2" text2="給智慧銀髮族：早安圖、幸運信不要再傳啦" 
-            href3="https://udn.com/news/story/6885/1686304" img3="https://goo.gl/huhQbc" text3="看準退休族消費經濟 私校搶橘色商機" 
-            href4="https://udn.com/news/story/7241/2975251" img4="https://goo.gl/Wa7JUU" text4="春節橘色高齡族群商機 「宅經濟」最夯"> 
+            href1="https://health.udn.com/health/story/6006/2983486" :img1="relate_2" text1="退休老師寫自傳 找回心中缺角" 
+            href2="https://health.udn.com/health/story/6006/2813024" :img2="relate_1" text2="給智慧銀髮族：早安圖、幸運信不要再傳啦" 
+            href3="https://udn.com/news/story/6885/1686304" :img3="relate_3" text3="看準退休族消費經濟 私校搶橘色商機" 
+            href4="https://udn.com/news/story/7241/2975251" :img4="relate_4" text4="春節橘色高齡族群商機 「宅經濟」最夯"> 
         </Relate>
         <p><br/></p>
-        <Fb-Comment></Fb-Comment>
+        <Fb-Comment href="https://udn.com/upf/newmedia/2018_data/orange-project/index.html"></Fb-Comment>
     </Content>
     <Foot background-color="#FFFFFF"></Foot>
   </div>
@@ -73,6 +73,8 @@ import cover_4_m from './assets/cover_4_m.jpg'
 
 import relate_1 from './assets/relate_1.jpg'
 import relate_2 from './assets/relate_2.jpg'
+import relate_3 from './assets/relate_3.jpg'
+import relate_4 from './assets/relate_4.jpg'
 
 import ImgBanner from './assets/banner.jpg'
 
@@ -113,6 +115,8 @@ export default {
       cover_4_m: cover_4_m,
       relate_1: relate_1,
       relate_2: relate_2,
+      relate_3: relate_3,
+      relate_4: relate_4,
       video: video,
       videoPC: video_pc
     }

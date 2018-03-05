@@ -170,7 +170,7 @@ export default {
 		top: 20px;
 		left: 15px;
 		text-align: left;
-		font-size: 36px;
+		font-size: 42px;
 		line-height: 1.5;
 		border-bottom: 2px solid orange;
 		font-weight: bold;
@@ -257,11 +257,11 @@ export default {
 .imgSay{
 	position: absolute;
 	left: 20px;
-	bottom: 20px;
+	bottom: 5%;
 	
 }
 .mainTitle{
-    font-size: 40px;
+    font-size: 36px;
     font-weight: bold;
     letter-spacing: -1px;
     color: #FFFFFF;
@@ -271,10 +271,12 @@ export default {
 }
 .subTitle{
 	width: 80%;
-    font-size: 40px;
+    font-size: 30px;
     text-align: left;
     color: #FFFFFF;
+    margin-top: 5px;
     margin-bottom: 0;
+    text-shadow: 0 0px 18px rgba(48,48,48,1);
 }
 @media screen and (min-width: 768px) and (max-width: 1024px) {
 	.mainTitle{
@@ -288,7 +290,7 @@ export default {
 	.PhotoLinkWrapper{
 		h2{
 			width: auto;
-			font-size: 50px;
+			font-size: 70px;
 			top: 70px;
 		}
 	}
@@ -299,10 +301,13 @@ export default {
 		display: block;
 	}
 	.mainTitle{
-		font-size: 55px;
+		font-size: 56px;
 	}
 	.subTitle{
-		font-size: 55px;
+		font-size: 47px;
+	}
+	.imgSay{
+		left: 5%;
 	}
 }
 @keyframes fadeIn {

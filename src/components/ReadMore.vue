@@ -6,7 +6,7 @@
 			<div class="leftBorder" :style="{borderColor: titleColor}"></div>
 			<div class="rightBorder" :style="{borderColor: titleColor}"></div>
 			<span v-if="useReadMore" class="toRead">{{text}}</span>
-			<a class="linkBlock" :href='href' target="_blank" @click.prevent='sendGA()'></a>
+			<a class="linkBlock" :href='href' target="_blank" @click='sendGA()'></a>
 		</div>
 		<div class="forVideo">
 			<EmbededVideo v-if="isVideo" :src="src" :srcWeb="srcWeb" :poster="poster" :posterWeb="posterWeb" customControl="yes" controlColor="#ff9a57"></EmbededVideo>
@@ -61,7 +61,7 @@ export default {
           return this.bgweb
       }
     },
-    sendGA: function(i) {
+    sendGA: function() {
     	const self = this
         ga("send", {
             "hitType": "event",

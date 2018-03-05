@@ -2,7 +2,7 @@
     <div id="cover" :style="{backgroundImage: 'url(' + bgRWD() + ')'}" :class="{top: top, bottom: bottom, aligncenter: aligncenter}">
         <div id="title-contain">
             <h1>{{title}}</h1>
-            <div id="sub-title">{{subtitle}}</div>
+            <div id="sub-title" :class="{theShadow: !noShadow}">{{subtitle}}</div>
             <slot></slot>
         </div>
     </div>
@@ -11,7 +11,7 @@
 <script>
 export default {
     name: 'Cover',
-    props: ['title', 'subtitle', 'bg', 'bgweb', "position"],
+    props: ['title', 'subtitle', 'bg', 'bgweb', "position", "noShadow"],
     data: function(){
         return{
             aligncenter: false,
@@ -74,6 +74,9 @@ export default {
     }
     .aligncenter{
         align-items: center;
+    }
+    .theShadow{
+        text-shadow: 0 0px 18px rgba(48,48,48,1);
     }
     h1{
         font-size: 55px;

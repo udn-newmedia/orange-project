@@ -2,10 +2,13 @@
 	<div class="mainPage" :id="menuText">
 		<h2>如何過熟齡理想生活</h2>
 		<div class="btnBox">
-			<div class="circularBtn" v-for="(btn, index) in btnBox" @click="sendGA(index)">
-				<a :href="btn.link" target="_blank"></a>
-				<img :src="btn.img">
-				<p>{{btn.text}}</p>
+			<div class="circularBtn" v-for="(btn, index) in btnBox" @click="sendGA(index)"  @mouseenter="handle_mouseenter(index)" @mouseleave="handle_mouseleave(index)"> 
+				<a :href="btn.link" target="_blank">
+					<img :src="btn.img" :class="{isScale: btn.isScale}">
+				</a>
+				<a :href="btn.link" target="_blank">
+					<p>{{btn.text}}</p>	
+				</a>
 			</div>						
 		</div>												
 	</div>	
@@ -13,10 +16,15 @@
 
 <script>
 import Bus from '../eventBus.js'
-import btn4_1 from '../assets/carousel/btn4_1.png'
-import btn4_2 from '../assets/carousel/btn4_2.png'
-import btn4_3 from '../assets/carousel/btn4_3.png'
-import btn4_4 from '../assets/carousel/btn4_4.png'
+import btn4_1_a from '../assets/carousel/btn4_1_a.png'
+import btn4_2_a from '../assets/carousel/btn4_2_a.png'
+import btn4_3_a from '../assets/carousel/btn4_3_a.png'
+import btn4_4_a from '../assets/carousel/btn4_4_a.png'
+
+import btn4_1Hover from '../assets/carousel/btn4_1h.png'
+import btn4_2Hover from '../assets/carousel/btn4_2h.png'
+import btn4_3Hover from '../assets/carousel/btn4_3h.png'
+import btn4_4Hover from '../assets/carousel/btn4_4h.png'
 
 import Utils from 'udn-newmedia-utils'
 export default {
@@ -28,28 +36,53 @@ export default {
     	btnBox: [
     		{
     			link: 'https://health.udn.com/health/story/6039/2787328',
-    			img: btn4_1,
-    			text: '食：老了就該少吃？ 改善肌少症 你該這樣吃！'
+    			img: btn4_1_a,
+    			original: btn4_1_a,
+    			hover: btn4_1Hover,
+    			isScale: false,
+    			text: '熟齡不忌口，改善肌少症。',
+
     		},
     		{
-    			link: 'https://health.udn.com/health/story/6039/2787328',
-    			img: btn4_2,
-    			text: '衣：「老年定義，我說了算！」解放年齡 老來俏白髮潮'
+    			link: 'https://health.udn.com/health/story/6006/2539407',
+    			img: btn4_2_a,
+    			original: btn4_2_a,
+    			hover: btn4_2Hover,
+    			isScale: false,
+    			text: '銀髮老來俏，穿出新活力。',
+
     		},
     		{
-    			link: 'https://health.udn.com/health/story/6039/2787328',
-    			img: btn4_3,
-    			text: '住：花大錢才有安全？專家：重點改造就有效果'
+    			link: 'https://health.udn.com/health/story/6631/2891895',
+    			img: btn4_3_a,
+    			original: btn4_3_a,
+    			hover: btn4_3Hover,
+    			isScale: false,
+    			text: '住得好安心，居家微改造。',
+
     		},
     		{
-    			link: 'https://health.udn.com/health/story/6039/2787328',
-    			img: btn4_4,
-    			text: '行：帶長輩趴趴走 細節打理要周全'
+    			link: 'https://health.udn.com/health/story/6631/2320977',
+    			img: btn4_4_a,
+    			original: btn4_4_a,
+    			hover: btn4_4Hover,
+    			isScale: false,
+    			text: '長輩趴趴走，細節要周全。',
     		}
     	]
     }
   },
   methods: {
+  	handle_mouseenter: function(i) {
+  		console.log('enter')
+  		this.btnBox[i].img = this.btnBox[i].hover
+  		this.btnBox[i].isScale = true
+  	},
+  	handle_mouseleave: function(i) {
+  		console.log('leave')
+  		this.btnBox[i].img = this.btnBox[i].original
+  		this.btnBox[i].isScale = false
+  	},
     handle_Emit: function() {
       const self = this
       Bus.$emit('emitHeadbarTitle', {
@@ -84,10 +117,13 @@ h2{
 	line-height: 1.5;
 	border-bottom: 2px solid orange;
 	font-weight: bold;
-	color: #fff;
-	text-shadow: 0 0px 18px rgba(48,48,48,1);
+	color: #343434;
+	// text-shadow: 0 0px 18px rgba(48,48,48,1);
 }
 p{
+	text-align: center;
+	margin: 0 auto;
+	width: 100%;
 	font-size: 18px;
 	line-height: 32px;
 	padding: 0 15px;
@@ -122,14 +158,15 @@ p > br {
 		width: 100%;
 		max-height: 100%;
 		margin-bottom: 15px;
+		transition: 166ms ease-out;
 	}
 	a{
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
+		text-decoration: none;
+		color: #343434;
 	}
+}
+.isScale{
+	transform: scale(1.1);
 }
 @media screen and (min-width: 768px) and (max-width: 1023px){
 	.mainPage{
@@ -154,6 +191,7 @@ p > br {
 		margin-bottom: 40px;
 	}
 	p{
+		width: 70%;
 		font-size: 20px;
 		line-height: 36px;
 	}
@@ -163,7 +201,7 @@ p > br {
 }
 @media screen and (min-width: 1024px) {
 	h2{
-		font-size: 82px;
+		font-size: 70px;
 		margin-top: 0;
 		margin-bottom: 5%;
 	}
@@ -191,7 +229,6 @@ p > br {
 		margin-top: 0;
 		margin: 0 15px;
 		img{
-			margin-bottom: 40px;
 			padding: 12.5%;
 		}
 	}	
