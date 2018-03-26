@@ -37,7 +37,7 @@
             group:'udn',
             cid : 'udn_soft',
             act : 'view',
-            cat : ['news','cms','','',''],
+            cat : ['融媒體','融媒體','','',''],
             uid : '',
             bid : '',
             pid : pid,
@@ -55,12 +55,44 @@
             er.src = erUrlPrefix + 'er.js?' + (new Date().getTime());
             var currentJs = document.getElementById('etu-recommender');
             currentJs.parentNode.insertBefore(er, currentJs);
-        })();</script><style>* {
-          font-family: Arial, Microsoft JhengHei, sans-serif;
-        }</style><link href=./static/css/app.41bc55d8727b288ed416bb1a970aed13.css rel=stylesheet></head><body><div id=fb-root></div><script>(function(d, s, id) {
+        })();</script><style>html, body #app {
+          font-family: Arial, "Microsoft JhengHei", sans-serif;
+        }
+        #AdTestPC{
+            width: 100%;
+            display: flex;
+            -ms-align-items: center;
+            align-items: center;
+            justify-content: center;
+            opacity: 1;
+            margin: 50px 0;
+            overflow: hidden;
+        }
+        #AdTestMob{
+            width: 100%;
+            display: flex;
+            -ms-align-items: center;
+            align-items: center;
+            justify-content: center;
+            opacity: 1;            
+            margin: 50px 0;
+            overflow: hidden;
+        }
+        @media screen and (max-width: 1023px){
+            #AdTestPC{
+                z-index: -10;
+                opacity: 0;
+            }
+        }
+        @media screen and (min-width: 1024px) {
+            #AdTestMob{
+                z-index: -10;
+                opacity: 0;
+            }
+        }</style><link href=./static/css/app.092ffc3366ef00aa97fe6426c024c984.css rel=stylesheet></head><body><div id=fb-root></div><script type=application/javascript src=https://pixel.adsafeprotected.com/rjss/st/149769/23013521/skeleton.js></script><script>(function(d, s, id) {
         var js, fjs = d.getElementsByTagName(s)[0];
         if (d.getElementById(id)) return;
         js = d.createElement(s); js.id = id;
         js.src = "//connect.facebook.net/zh_TW/sdk.js?t-1#xfbml=1&version=v2.7&appId=1010324812347164";
         fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));</script><div id=app></div><script type=text/javascript src=./static/js/manifest.cbc9baba8b1dea972fb9.js></script><script type=text/javascript src=./static/js/vendor.a3ccbecfd1599788c4cc.js></script><script type=text/javascript src=./static/js/app.c6680de9108ff480d545.js></script></body></html>
+    }(document, 'script', 'facebook-jssdk'));</script><div style="padding-top: 50px"></div><div id=app></div><script type=text/javascript src=./static/js/manifest.4b36912bb079f306999f.js></script><script type=text/javascript src=./static/js/vendor.ed3da9390d5a96755273.js></script><script type=text/javascript src=./static/js/app.70f7b1b6e49c3e967876.js></script></body></html>

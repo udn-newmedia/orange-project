@@ -4,10 +4,18 @@
 		<div class="btnBox">
 			<div class="circularBtn" v-for="(btn, index) in btnBox" @click="sendGA(index)"  @mouseenter="handle_mouseenter(index)" @mouseleave="handle_mouseleave(index)"> 
 				<a :href="btn.link" target="_blank">
-					<img :src="btn.img" :class="{isScale: btn.isScale}">
+					<img :src="btn.img" :class="{isScale: btn.isScale}" title="點我看報導" class="bigImg">
 				</a>
 				<a :href="btn.link" target="_blank">
-					<p>{{btn.text}}</p>	
+					<div class="slogenWrapper">
+						<div class="slogen">
+							<p>{{btn.text}}</p>	
+							<p>{{btn.text2}}</p>						
+						</div>
+						<div class="slogenArrow">
+							<img src="../assets/btn_in.png">
+						</div>						
+					</div>
 				</a>
 			</div>						
 		</div>												
@@ -39,8 +47,11 @@ export default {
     			img: btn4_1_a,
     			original: btn4_1_a,
     			hover: btn4_1Hover,
+    			// hover: btn4_1_a,
+    			// original: btn4_1Hover,    			
     			isScale: false,
-    			text: '熟齡不忌口，改善肌少症。',
+    			text: '熟齡不忌口',
+    			text2: '改善肌少症'
 
     		},
     		{
@@ -48,17 +59,22 @@ export default {
     			img: btn4_2_a,
     			original: btn4_2_a,
     			hover: btn4_2Hover,
+    			// hover: btn4_2_a,
+    			// original: btn4_2Hover,       			
     			isScale: false,
-    			text: '銀髮老來俏，穿出新活力。',
-
+    			text: '銀髮老來俏',
+    			text2: '穿出新活力'
     		},
     		{
     			link: 'https://health.udn.com/health/story/6631/2891895',
     			img: btn4_3_a,
     			original: btn4_3_a,
     			hover: btn4_3Hover,
+    			// hover: btn4_3_a,
+    			// original: btn4_3Hover,       			
     			isScale: false,
-    			text: '住得好安心，居家微改造。',
+    			text: '住得好安心',
+    			text2: '居家微改造'
 
     		},
     		{
@@ -66,8 +82,11 @@ export default {
     			img: btn4_4_a,
     			original: btn4_4_a,
     			hover: btn4_4Hover,
+    			// hover: btn4_4_a,
+    			// original: btn4_4Hover,       			
     			isScale: false,
-    			text: '長輩趴趴走，細節要周全。',
+    			text: '長輩趴趴走',
+    			text2: '細節要周全'
     		}
     	]
     }
@@ -109,6 +128,7 @@ export default {
 h2{
 	position: relative;
 	z-index: 30;
+	margin-top: 60px;
 	margin-right: auto;
 	margin-left: auto;
 	margin-bottom: 20px;
@@ -121,12 +141,12 @@ h2{
 	// text-shadow: 0 0px 18px rgba(48,48,48,1);
 }
 p{
-	text-align: center;
+	text-align: left;
 	margin: 0 auto;
-	width: 100%;
 	font-size: 18px;
 	line-height: 32px;
-	padding: 0 15px;
+	// padding: 0 15px;
+	white-space: nowrap;
 }
 p > br {
 	ling-height: 36px;
@@ -145,16 +165,50 @@ p > br {
 	flex-wrap: wrap;
 	justify-content: space-between;
 }
+.slogenWrapper{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 90px;
+	// border: 3.5px solid #ffbe69;
+	// border-radius: 15px;
+}
+.slogen{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding-left: 5px;
+	// border: 3.5px solid #ffbe69;
+	// border-radius: 15px 0 0 15px;
+	border-right: none;
+	height: 90px; 
+}
+.slogenArrow{
+	height: 100%;
+	display: flex;
+	align-items: center;
+	// border: 3.5px solid #ffbe69;
+	// border-radius: 0 15px 15px 0;
+	border-left: none;	
+	padding-right: 5px;
+	img{
+		width: 90%;
+		max-height: 100%; 
+		padding: 5px;
+		margin-bottom: 0 !important;
+	}
+}
 .circularBtn{
 	flex-shrink: 0;
 	position: relative;
 	top: 0;
 	left: 0;
-	width: 40%;
-	height: 40%;
+	width: 45%;
 	cursor: pointer;
 	margin-bottom: 20px;
-	img{
+	.bigImg{
 		width: 100%;
 		max-height: 100%;
 		margin-bottom: 15px;
@@ -172,9 +226,6 @@ p > br {
 	.mainPage{
 		padding: 50px;
 	}
-	.btnBox{
-		max-width: 880px;
-	}
 	.slideItem{
 		img{
 			width: 40%;
@@ -182,16 +233,25 @@ p > br {
 		}
 	}
 	.circularBtn{
-		img{
+		.bigImg{
 			padding: 15%;
 		}
 	}	
+	.slogenWrapper{
+		justify-content: center;
+	}
+	.slogen{
+		padding-left: 15px;
+	}
+	.slogenArrow{
+		padding-right: 15px;
+	}
 	h2{
 		margin-top: 80px;
 		margin-bottom: 40px;
 	}
 	p{
-		width: 70%;
+		text-align: center;		
 		font-size: 20px;
 		line-height: 36px;
 	}
@@ -201,11 +261,12 @@ p > br {
 }
 @media screen and (min-width: 1024px) {
 	h2{
-		font-size: 70px;
+		font-size: 50px;
 		margin-top: 0;
 		margin-bottom: 5%;
 	}
 	p{
+		text-align: center;
 		font-size: 21px;
 		line-height: 1.5;
 	}
@@ -213,7 +274,8 @@ p > br {
 		ling-height: 50px;
 	}	
 	.btnBox{
-		padding: 0 10%;
+		margin: 0 auto;
+		max-width: 1200px;
 	}	
 	.mainPage{
 		justify-content: center;
@@ -228,9 +290,15 @@ p > br {
 		min-height: 60%;
 		margin-top: 0;
 		margin: 0 15px;
-		img{
+		.bigImg{
 			padding: 12.5%;
 		}
+	}	
+	.slogen{
+		padding-left: 20px;
+	}
+	.slogenArrow{
+		padding-right: 20px;
 	}	
 }	
 </style>

@@ -1,23 +1,21 @@
 <template>
 	<div class="PhotoLinkWrapper" :id="menuText">
 		<h2 class="title">{{title}}</h2>
-		<div class="PhotoContainer">
-			<div class="PhotoLink" v-for="(person, index) in people" :class="{pActive: person.isActive, pSec: person.isSec}" :style="{left: index * layoutRWD() + '%'}">
-				<div class="pGlass" v-show='!person.isActive' @click='handle_click(index)'></div>
-				<div class="pContent" :style="{backgroundImage: 'url('+ person.img +')'}">
-					<a :href="person.href" target="_blank" @click.prevent='sendGA(index)'></a>
-					<div class="imgSay">
-						<h3 class="mainTitle">{{person.mainTitle}}</h3>
-						<h3 class="subTitle">{{person.subTitle}}</h3>
-					</div>
-				</div>
-			</div>		
-		</div>
-		<div class="prev arrowBtn hidden-lg" @click='handle_clickPrev'>
-			<i class="glyphicon glyphicon-menu-left fa-3x" aria-hidden="true"></i>
-		</div>
-		<div class="next arrowBtn hidden-lg" @click='handle_clickNext'>
-			<i class="glyphicon glyphicon-menu-right fa-3x" aria-hidden="true"></i>
+		<div class="photoContainer">
+			<div class="photolink" v-for="(person, index) in people" 
+				 :style="{backgroundImage: 'url('+ person.img +')'}" :class="{isActive: person.isActive}">
+				<a :href="person.href" target="_blank"></a>
+				<div class="imgTitle">
+					<h3 class='mainTitle'>{{person.mainTitle}}</h3>
+					<h3 class="subTitle"><span v-html="person.subTitle"></span></h3>
+				</div>	
+			</div>
+			<div class="prev arrowBtn hidden-lg hidden-md" @click='handle_clickPrev'>
+				<i class="glyphicon glyphicon-menu-left fa-3x" aria-hidden="true"></i>
+			</div>
+			<div class="next arrowBtn hidden-lg hidden-md" @click='handle_clickNext'>
+				<i class="glyphicon glyphicon-menu-right fa-3x" aria-hidden="true"></i>
+			</div>									
 		</div>
 	</div>
 </template>
@@ -77,7 +75,7 @@ export default {
             "eventAction": "click",
             "eventLabel": "[" + Utils.detectPlatform() + "] [" + document.querySelector('title').innerHTML + "] [" + self.people[i].href + "] ["+ self.people[i].mainTitle +"]"
         });   	    	
-        console.log("[" + Utils.detectPlatform() + "] [" + document.querySelector('title').innerHTML + "] [" + self.people[i].href + "] ["+ self.people[i].mainTitle +"]")
+        // console.log("[" + Utils.detectPlatform() + "] [" + document.querySelector('title').innerHTML + "] [" + self.people[i].href + "] ["+ self.people[i].mainTitle +"]")
     },
   	get_Index: function() {
   		const peopleLength = this.people.length
@@ -160,79 +158,53 @@ export default {
 	z-index: 100;
 	width: 100%;
 	height: 100vh;
-	background-color: orange;
+	background-color: #f6f5f5;
 	display: flex;
+	flex-direction: column;
 	align-items: center;
-	overflow: hidden;
+	justify-content: space-around;
+	// overflow: hidden;
 	h2{
-		position: absolute;
+		position: relative;
 		z-index: 30;
-		top: 20px;
-		left: 20px;
 		text-align: left;
 		font-size: 42px;
 		line-height: 1.5;
 		border-bottom: 2px solid orange;
 		font-weight: bold;
-		color: #fff;
-		text-shadow: 0 0px 18px rgba(48,48,48,1);
+		color: #343434;
+		margin-top: 60px;
 	}
 }
-.PhotoContainer{
+.photoContainer{
+	position: relative;
+	z-index: 0;
+	width: 100%;
+	height: 80%;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+.photolink{
 	position: absolute;
 	z-index: 0;
 	top: 0;
 	left: 0;
-	width: 100%;
 	height: 100%;
-}
-.PhotoLink{
-	position: absolute;
-	z-index: 4;
-	flex-shrink: 0;
-	top: 0;
 	width: 100%;
-	height: 100%;
-	img{
-		width: 100%;
-		height: 100%;
-	}
-}
-.pGlass{
-	display: none;
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	z-index: 5;
-	background-color: rgba(black, .7);
-	cursor: pointer;
-	animation: fadeIn 500ms ease-in;
-	transition: background-color 444ms ease-out;
-	&:hover{
-		background-color: rgba(black, .5);
-	}
-}
-.pContent{
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
+	padding: 15px 15px 15px 15px;
+	background-clip: content-box;
 	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center center;
+	background-position: center top;
 	a{
 		position: absolute;
+		top: 0;
+		left: 0;
 		width: 100%;
 		height: 100%;
 	}
 }
-.pSec{
-	z-index: 2;
-}
-.pActive{
+.isActive{
 	z-index: 10 !important;
 }
 .arrowBtn{
@@ -242,7 +214,7 @@ export default {
 	margin-top: -25px;
 	color: #fff;
 	cursor: pointer;
-	text-shadow: 2px 4px rgba(48,48,48,1);
+	// text-shadow: 2px 4px rgba(48,48,48,0.3);
 }
 .prev{
 	top: 50%;
@@ -254,11 +226,13 @@ export default {
 	right: 0;
 	margin-right: 15px;
 }
-.imgSay{
+.imgTitle{
 	position: absolute;
-	left: 20px;
+	z-index: 0;
+	left: 15px;
 	bottom: 5%;
-	
+	padding-left: 15px;
+	pointer-events: none;
 }
 .mainTitle{
     font-size: 36px;
@@ -270,45 +244,35 @@ export default {
     margin: 0;	
 }
 .subTitle{
-	width: 80%;
-    font-size: 30px;
-    text-align: left;
-    color: #FFFFFF;
-    margin-top: 5px;
-    margin-bottom: 0;
-    text-shadow: 0 0px 18px rgba(48,48,48,1);
+	width: 100%;
+  font-size: 30px;
+  text-align: left;
+  color: #FFFFFF;
+  margin-top: 5px;
+  margin-bottom: 0;
+  text-shadow: 0 0px 18px rgba(48,48,48,1);
 }
 @media screen and (min-width: 768px) and (max-width: 1024px) {
 	.mainTitle{
-		font-size: 50px;
+		font-size: 30px;
 	}
 	.subTitle{
-		font-size: 50px;
+		font-size: 30px;
 	}
 }
 @media screen and (min-width: 1024px) {
 	.PhotoLinkWrapper{
 		h2{
 			width: auto;
-			font-size: 70px;
-			top: 70px;
-			left: 30px;
+			font-size: 50px;
 		}
 	}
-	.PhotoLink{
-		width: 40%;
+	.photoContainer{
+		justify-content: center;
 	}
-	.pGlass{
-		display: block;
-	}
-	.mainTitle{
-		font-size: 56px;
-	}
-	.subTitle{
-		font-size: 47px;
-	}
-	.imgSay{
-		left: 5%;
+	.photolink{
+		position: relative;
+		width: 30%;
 	}
 }
 @keyframes fadeIn {

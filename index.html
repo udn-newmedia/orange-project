@@ -34,8 +34,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- <script src="https://udn.com/upf/newmedia/js/jquery.fullPage.min.js"></script> -->
     <script src="https://unpkg.com/vue"></script>
+    </SCRIPT>  
     <!-- <script src="./dist/udn-newmedia-vue-components.min.js"></script> -->
-
     <!-- Facebook Pixel Code -->
     <script>
         !function(f,b,e,v,n,t,s)
@@ -105,7 +105,7 @@
             group:'udn',
             cid : 'udn_soft',
             act : 'view',
-            cat : ['news','cms','','',''],
+            cat : ['融媒體','融媒體','','',''],
             uid : '',
             bid : '',
             pid : pid,
@@ -126,21 +126,92 @@
         })();
     </script>
     <style>
-        * {
-          font-family: Arial, Microsoft JhengHei, sans-serif;
+        html, body #app {
+          font-family: Arial, "Microsoft JhengHei", sans-serif;
+        }
+        #AdTestPC{
+            width: 100%;
+            display: flex;
+            -ms-align-items: center;
+            align-items: center;
+            justify-content: center;
+            opacity: 1;
+            margin: 50px 0;
+            overflow: hidden;
+        }
+        #AdTestMob{
+            width: 100%;
+            display: flex;
+            -ms-align-items: center;
+            align-items: center;
+            justify-content: center;
+            opacity: 1;            
+            margin: 50px 0;
+            overflow: hidden;
+        }
+        @media screen and (max-width: 1023px){
+            #AdTestPC{
+                z-index: -10;
+                opacity: 0;
+            }
+        }
+        @media screen and (min-width: 1024px) {
+            #AdTestMob{
+                z-index: -10;
+                opacity: 0;
+            }
         }
     </style>    
   </head>
   <body>
     <div id="fb-root"></div>
+    <SCRIPT TYPE="application/javascript" SRC="https://pixel.adsafeprotected.com/rjss/st/149769/23013521/skeleton.js"></SCRIPT>    
     <script>(function(d, s, id) {
         var js, fjs = d.getElementsByTagName(s)[0];
         if (d.getElementById(id)) return;
         js = d.createElement(s); js.id = id;
         js.src = "//connect.facebook.net/zh_TW/sdk.js?t-1#xfbml=1&version=v2.7&appId=1010324812347164";
         fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));</script>    
+    }(document, 'script', 'facebook-jssdk'));</script>  
+    <div style="padding-top: 50px">
+    </div>   
     <div id="app"></div>
+<!--     <div id="AdTestMob">
+        <ins class='dcmads' style='display:inline-block;width:300px;height:250px'
+            data-dcm-placement='N5716.138204.UDN.COM/B20847558.216110903'
+            data-dcm-click-tracker='http://p.udn.com.tw/upf/newmedia/test/transweb.html?v=4'
+            data-dcm-rendering-mode='iframe'
+            data-dcm-https-only
+            data-dcm-resettable-device-id=''
+            data-dcm-app-id=''>
+          <script src='https://www.googletagservices.com/dcm/dcmads.js'></script>
+        </ins>
+        <SCRIPT TYPE="application/javascript" SRC="https://pixel.adsafeprotected.com/rjss/st/149769/23013521/skeleton.js"></SCRIPT>
+    </div>
+    <div id="AdTestPC">
+        <ins class='dcmads' style='display:inline-block;width:970px;height:250px'
+            data-dcm-placement='N5716.138204.UDN.COM/B20847558.216110540'
+            data-dcm-click-tracker='http://p.udn.com.tw/upf/newmedia/test/transweb.html?v=4'
+            data-dcm-rendering-mode='iframe'
+            data-dcm-https-only
+            data-dcm-resettable-device-id=''
+            data-dcm-app-id=''>
+          <script src='https://www.googletagservices.com/dcm/dcmads.js'></script>
+        </ins>
+        <SCRIPT TYPE="application/javascript" SRC="https://pixel.adsafeprotected.com/rjss/st/149769/23013519/skeleton.js"></SCRIPT>
+    </div> -->
     <!-- built files will be auto injected -->
+<!--     <script>
+        $(function() {
+            setTimeout(function(){
+                if(window.innerWidth < 1024) {
+                    $('#AdTestMob').appendTo('#bannerSet')
+                } else {
+                    $('#AdTestPC').appendTo('#bannerSet')    
+                }
+                console.log('move AD')
+            }, 111)            
+        })
+    </script> -->
   </body>
 </html>

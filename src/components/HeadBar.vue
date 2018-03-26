@@ -8,13 +8,13 @@
             <div class="linkOut" :style="{color: color, backgroundColor: backgroundColor}">
 	    		<slot></slot>
 	    	</div>
-            <div id="logo-contain" class="hidden-lg">
+            <div id="logo-contain" class="hidden-lg hidden-md">
                 <div class="logo-block">
                     <div class="logo">
                         <a href="https://udn.com/news/index" target="_blank"><img src="https://udn.com/upf/newmedia/image/udn_logo_2018_v.svg"></a>
                     </div>
                     <div class="logo" id="nmd">
-                        <a href="https://www.facebook.com/udnNewMediaLab/" target="_blank"><img src="https://udn.com/upf/newmedia/image/nmd_logo_2018_v.svg"></a>
+                        <a href="https://udn.com/upf/newmedia/ubrandstudio/?familybar_hide" target="_blank"><img src="https://udn.com/upf/newmedia/image/logo_u_brand.svg"></a>
                     </div>
                 </div>
             </div>
@@ -147,9 +147,15 @@ export default {
                 })
             }, 500)    
         })
+        window.addEventListener('resize', () => {
+            this.$forceUpdate()
+            if(window.innerWidth > 1024){
+                this.menuSlideDirection = 'translate(0, 0)'
+            }            
+        })   
         if(window.innerWidth > 1024){
             this.menuSlideDirection = 'translate(0, 0)'
-        }
+        }             
         else{
             switch(this.MenuSlideFrom) {
                 case 'top':
@@ -456,7 +462,7 @@ export default {
     }
 }
 
-@media screen and (orientation: landscape) {
+@media screen and (orientation: landscape) and (max-width: 768px){
     #logo-contain{
         display: none;
     }
