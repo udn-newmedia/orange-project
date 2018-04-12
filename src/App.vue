@@ -5,19 +5,20 @@
     <Cover title="回甘大人" subtitle="熟齡的新生活學" position='bottom' style="background-color: #000" :bg='cover_1_m' :bgweb="cover_1">
       <Share href='https://udn.com/upf/newmedia/2018_data/orange-project/index.html'></Share>
     </Cover>
-    <Banner></Banner>
+    <DFPads></DFPads>
     <ReadMore menu-text="找認同" position='right' href="https://theme.udn.com/theme/story/6774/2994070" title-color="rgba(99,186,134,0.8)" fontColor="#fff" useReadMore='yes'
-              :bg='cover_3_m' :bgweb="cover_3" title="橘色世代滑出存在感" subtitle="渴望「向下認同」"></ReadMore>    
+              :bg='cover_3_m' :bgweb="cover_3" title="橘色世代滑出存在感" subtitle="渴望「向下認同」"></ReadMore>
     <ReadMore menu-text="找青春" position='left' title-color="rgba(99,186,134,0.8)" href="https://theme.udn.com/theme/story/6774/2994101" useReadMore='yes'
-              :bg='cover_2_m' :bgweb="cover_2" title="練肌肉、穿韓版服飾 " subtitle="不服老的回甘人生"></ReadMore>    
+              :bg='cover_2_m' :bgweb="cover_2" title="練肌肉、穿韓版服飾 " subtitle="不服老的回甘人生"></ReadMore>
     <PhotoLink title="名人的理想生活" imgStart="left" menuText="名人樂活"
     :img1="people_1" mainTitle1='李昂'   subTitle1='老後生活<br/>你儲存愛情了嗎?'    href1='https://theme.udn.com/theme/story/6774/2992791'
     :img2='people_2' mainTitle2='岑永康' subTitle2='空巢期到南美洲<br/>來場拉丁式冒險' href2='https://theme.udn.com/theme/story/6774/2992969'
     :img3='people_3' mainTitle3='陳建仁' subTitle3='遠離「失重感」<br/>退休也要有夢' href3='https://theme.udn.com/theme/story/6774/2994560'></PhotoLink>
-    <GoodLife menu-text="生活實踐"></GoodLife>   
+    <GoodLife menu-text="生活實踐"></GoodLife>
     <ReadMore menu-text="Young穿搭" position='left' title-color="rgba(99,186,134,0.8)" href="https://www.youtube.com/watch?v=IiRwmOCUVLQ" useReadMore='yes'
-              :src="video" :srcWeb="videoPC" title="大人young " subtitle="快時尚優雅穿搭術"></ReadMore>    
-    <ReadMore menu-text="學理財" position='right' href="https://udn.com/upf/newmedia/2017_data/ideal/check.html" title-color="rgba(99,186,134,0.8)" font-color="#fff" useReadMore='yes' :bg='cover_4_m' :bgweb="cover_4" title="三大退休族" subtitle="達人教你理財術"></ReadMore>           
+              :src="video" :srcWeb="videoPC" title="大人young " subtitle="快時尚優雅穿搭術"></ReadMore>
+    <!-- <ReadMore menu-text="學理財" position='right' href="https://udn.com/upf/newmedia/2017_data/ideal/check.html" title-color="rgba(99,186,134,0.8)" font-color="#fff" useReadMore='yes' :bg='cover_4_m' :bgweb="cover_4" title="三大退休族" subtitle="達人教你理財術"></ReadMore> -->
+    <ReadMore class="cusBanner" menu-text="經典饗宴" position='right' href="https://goo.gl/DKA15Y" title-color="rgba(99,186,134,0.8)" font-color="#fff" useReadMore='yes' :bg='huananRelate' :bgweb="huananCover" title=" 守護夢想 呈獻經典" subtitle="華南金控 經典饗宴"></ReadMore>
     <Content background-color="#FFFFFF">
         <p><br/></p>
         <Share href="https://udn.com/upf/newmedia/2018_data/orange-project/index.html"></Share>
@@ -35,11 +36,11 @@
             <div>2018.03.15</div>
         </Editor>
         <p><br/></p>
-        <Relate title="延伸閱讀" color="#363434" 
+        <Relate title="延伸閱讀" color="#363434"
             href1="https://www.aptg.com.tw/event/1803/HipHop/?&utm_source=udn&utm_medium=300x250&utm_campaign=201803_333onlineshop" :img1="AsiaBanner" text1="亞太門市 1塊打電話上網吃到飽"
-            href2="https://health.udn.com/health/story/6006/2983486" :img2="relate_2" text2="退休老師寫自傳 找回心中缺角" 
-            href3="https://health.udn.com/health/story/6006/2813024" :img3="relate_1" text3="給智慧銀髮族：早安圖、幸運信不要再傳啦"  
-            href4="https://udn.com/news/story/7241/2975251" :img4="relate_4" text4="春節橘色高齡族群商機 「宅經濟」最夯"> 
+            href2="https://goo.gl/DKA15Y" :img2="huananRelate" text2="守護夢想 呈獻經典 華南金控 經典饗宴"
+            href3="https://health.udn.com/health/story/6006/2813024" :img3="relate_1" text3="給智慧銀髮族：早安圖、幸運信不要再傳啦"
+            href4="https://udn.com/news/story/7241/2975251" :img4="relate_4" text4="春節橘色高齡族群商機 「宅經濟」最夯">
         </Relate>
         <p><br/></p>
         <Fb-Comment href="https://udn.com/upf/newmedia/2018_data/orange-project/index.html"></Fb-Comment>
@@ -57,6 +58,7 @@ import Cover from './components/Cover.vue'
 import HeadBar from './components/HeadBar.vue'
 import ReadMore from './components/ReadMore.vue'
 import PhotoLink from './components/PhotoLink.vue'
+import DFPads from './components/DFPads'
 import Logo from './components/Logo.vue'
 
 import people_1 from './assets/people_1.jpg'
@@ -78,6 +80,9 @@ import relate_2 from './assets/relate_2.jpg'
 import AsiaBanner from './assets/asia_banner.jpg'
 import relate_4 from './assets/relate_4.jpg'
 
+import huananCover from './assets/huanan/1280960-1.jpg'
+import huananRelate from './assets/huanan/300250-1.jpg'
+
 import ImgBanner from './assets/banner.jpg'
 
 import video from './assets/oldvideo_mob.mp4'
@@ -89,6 +94,7 @@ export default {
     Banner,
     Cover,
     Content,
+    DFPads,
     HeadBar,
     Editor,
     GoodLife,
@@ -120,13 +126,15 @@ export default {
       AsiaBanner: AsiaBanner,
       relate_4: relate_4,
       video: video,
-      videoPC: video_pc
+      videoPC: video_pc,
+      huananCover,
+      huananRelate
     }
   },
 }
 </script>
 
-<style>
+<style lang="scss">
 #app {
   font-size: 16px;
   line-height: 1.5;
@@ -135,5 +143,15 @@ export default {
   text-align: justify;
   height: 100vh;
   width: 100%;
+}
+.cusBanner{
+  background-size: contain !important;
+  background-position: center 25% !important;
+}
+@media screen and (min-width: 1024px){
+  .cusBanner{
+    background-size: 100% 90% !important;
+    background-position: center 50px !important;
+  }
 }
 </style>

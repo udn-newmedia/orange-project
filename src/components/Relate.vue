@@ -60,10 +60,7 @@ export default {
         window.addEventListener('resize', () => {
             this.$forceUpdate()
         })
-    }, 
-    mounted() {
-        console.log(this.showOnMob())
-    }
+    },
 }
 </script>
 
@@ -95,7 +92,7 @@ export default {
     #report img:hover{
         opacity: .5;
         transition: opacity .2s ease;
-    }   
+    }
     #report .col-sm-6 img{
         width: 100%;
     }
@@ -128,7 +125,7 @@ export default {
         /*for12*/
         #report .col-sm-12{
             clear: both;
-        }           
+        }
         #report .col-sm-12 img {
             width: auto;
             height: auto;
@@ -136,13 +133,13 @@ export default {
             width: 50%;
             padding-left: 10px;
             padding-bottom: 10px;
-        }        
+        }
     }
     @media screen and (min-width: 768px) and (max-width: 1024px){
         #report .col-sm-6 img{
             width: 100%;
             height: auto;
-        }         
+        }
         #report p{
             margin-top: 10px;
             margin-bottom: 32px;
@@ -150,20 +147,20 @@ export default {
         /*for 12*/
         #report .col-sm-12{
             clear: both;
-        }        
+        }
         #report .col-sm-12 img{
             width: 50%;
             float: right;
             height: auto;
             padding-left: 20px;
-            padding-bottom: 20px;            
-        }      
+            padding-bottom: 20px;
+        }
         #report .col-sm-12 p{
             width: 45%;
             float: left;
             margin-top: 10px;
             margin-bottom: 32px;
-        }         
+        }
     }
     @media screen and (min-width: 1025px){
         .row{
@@ -179,6 +176,6 @@ export default {
         }
         #report img{
             width: 100%;
-        }        
+        }
     }
 </style>
