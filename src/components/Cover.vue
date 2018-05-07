@@ -1,17 +1,19 @@
 <template>
-    <div id="cover" :style="{backgroundImage: 'url(' + bgRWD() + ')'}" :class="{top: top, bottom: bottom, aligncenter: aligncenter}">
-        <div id="title-contain">
-            <h1>{{title}}</h1>
-            <div id="sub-title" :class="{theShadow: !noShadow}">{{subtitle}}</div>
-            <slot></slot>
-        </div>
+  <div :id="menuText" class="cover" :style="{backgroundImage: 'url(' + bgRWD() + ')'}" :class="{top: top, bottom: bottom, aligncenter: aligncenter}">
+    <div id="title-contain" :style="{backgroundColor: boxColor}">
+      <h1 :class="{theShadow: !noShadow}" :style="{color: color}">{{title}}</h1>
+      <div id="sub-title" :class="{theShadow: !noShadow}" :style="{color: color}">{{subtitle}}</div>
+      <slot></slot>
     </div>
+    <slot name="anchor"></slot>
+  </div>
 </template>
 
 <script>
+import Bus from '../eventBus.js'
 export default {
     name: 'Cover',
-    props: ['title', 'subtitle', 'bg', 'bgweb', "position", "noShadow"],
+    props: ['title', 'subtitle', 'bg', 'bgweb', "position", "noShadow", "boxColor", "color", "menuText"],
     data: function(){
         return{
             aligncenter: false,
@@ -34,28 +36,41 @@ export default {
         }
     },
     methods: {
-        bgRWD: function(){
-            if(window.innerWidth <= 768){
-                if(window.matchMedia("(orientation: landscape)").matches){
-                    return this.bgweb
-                }
-                else{
-                    return this.bg
-                }
-            }
-            else{
-                return this.bgweb
-            }
-        }
+      bgRWD: function(){
+          if(window.innerWidth <= 768){
+              if(window.matchMedia("(orientation: landscape)").matches){
+                  return this.bgweb
+              }
+              else{
+                  return this.bg
+              }
+          }
+          else{
+              return this.bgweb
+          }
+      },
+      handle_Emit: function() {
+        const self = this
+        Bus.$emit('emitHeadbarTitle', {
+          title: self.menuText
+        })
+      },
+    },
+    mounted: function() {
+      this.handle_Emit()
     }
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
     #title-contain{
-        padding: 20px;
+      position: relative;
+      width: 45%;
+      padding: 20px;
+      max-width: 550px;
     }
-    #cover{
+    .cover{
+        position: relative;
         height: 100%;
         background-position: center center;
         background-repeat: no-repeat;
@@ -65,11 +80,14 @@ export default {
         flex-direction: column;
         justify-content: center;
         padding: 12% 8%;
+        a{
+          text-decoration: none;
+        }
     }
-    #cover.top{
+    .cover.top{
         justify-content: flex-start;
     }
-    #cover.bottom{
+    .cover.bottom{
         justify-content: flex-end;
     }
     .aligncenter{
@@ -78,13 +96,19 @@ export default {
     .theShadow{
         text-shadow: 0 0px 18px rgba(48,48,48,1);
     }
+    .arrow_box{
+      position: absolute;
+      right: 20px;
+      bottom: 20px;
+      color: #000;
+    }
     h1{
         font-size: 55px;
         font-weight: bold;
         letter-spacing: -1px;
         color: #FFFFFF;
         line-height: 1.1;
-        text-shadow: 0 0px 18px rgba(48,48,48,1);
+        /* text-shadow: 0 0px 18px rgba(48,48,48,1); */
         margin: 0;
     }
     #sub-title{
@@ -99,8 +123,12 @@ export default {
         #sub-title{
             font-size: 25px;
         }
-        #cover{
+        .cover{
             padding: 30% 0;
+        }
+        #title-contain{
+          width: 90%;
+          margin: 0 auto;
         }
     }
 
@@ -111,11 +139,12 @@ export default {
         #sub-title{
             font-size: 30px;
         }
-        #cover{
+        .cover{
             padding: 30% 0;
         }
         #title-contain{
-            padding: 0 100px;
+          width: 60%;
+          padding: 0 100px;
         }
     }
 

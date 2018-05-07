@@ -1,10 +1,10 @@
 <template>
 	<div :id="menuText" class="ReadMoreWrapper" :class="titlePosition" :style="{backgroundColor: backgroundColor, color: fontColor, backgroundImage: 'url('+ bgRWD() +')'}">
-		<div class="title" :style="{backgroundColor: titleColor}">
+		<div class="title" :style="{backgroundColor: titleColor}" :class="{theShadow: useShadow}">
 			<h2>{{title}}</h2>
 			<h2>{{subtitle}}</h2>
-			<div class="leftBorder" :style="{borderColor: titleColor}"></div>
-			<div class="rightBorder" :style="{borderColor: titleColor}"></div>
+			<!-- <div class="leftBorder" :style="{borderColor: titleColor}"></div>
+			<div class="rightBorder" :style="{borderColor: titleColor}"></div> -->
 			<span v-if="useReadMore" class="toRead">{{text}}</span>
 			<a class="linkBlock" :href='href' target="_blank" @click='sendGA()'></a>
 		</div>
@@ -24,7 +24,7 @@ export default {
   components:{
   	EmbededVideo
   },
-  props: ['menuText', 'position', 'title', 'subtitle', 'href', 'backgroundColor', 'titleColor', 'fontColor', 'useReadMore', 'bg', 'bgweb', 'src', 'srcWeb', 'poster', 'posterWeb'],
+  props: ['menuText', 'position', 'title', 'subtitle', 'href', 'backgroundColor', 'titleColor', 'fontColor', 'useReadMore', 'bg', 'bgweb', 'src', 'srcWeb', 'poster', 'posterWeb', 'useShadow'],
   data () {
     return {
     	text: '繼續閱讀'
@@ -78,7 +78,7 @@ export default {
       Bus.$emit('emitHeadbarTitle', {
         title: self.menuText
       })
-    },  	
+    },
   },
   created() {
   	window.addEventListener('resize', this.handle_resize)
@@ -88,14 +88,17 @@ export default {
   },
   mounted: function(){
      this.handle_Emit()
-  } 	
+  }
 }
 </script>
 
 <style lang="scss" scoped>
+.theShadow{
+	box-shadow: 0 0px 18px rgba(48,48,48,1);
+}
 .linkBlock{
 	position: absolute;
-	z-inde: 50;
+	z-index: 50;
 	top: 0;
 	left: 0;
 	width: 100%;
@@ -117,9 +120,9 @@ export default {
 	align-items: flex-end;
 	padding-bottom: 50px;
 	color: #fff;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;	
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .title{
 	width: 90%;
@@ -138,8 +141,8 @@ export default {
 		position: absolute;
 		right: 5px;
 		bottom: 5px;
-		text-decoration: none;
-		border-bottom: 1px solid #fff;
+		text-decoration: underline;
+		// border-bottom: 1px solid #fff;
 		color: inherit;
 		font-size: 16px;
 	}
@@ -160,13 +163,18 @@ export default {
 	right: -10px;
 	bottom: -10px;
 	border-bottom: 1px solid red;
-	border-right: 1px solid red;	
+	border-right: 1px solid red;
 }
 .titleLeft{
 	justify-content: center !important;
 }
 .titleRight{
 	justify-content: center !important;
+}
+@media screen and (min-width: 768px) and (max-width: 1023px){
+	.title{
+		width: 75%;
+	}
 }
 @media screen and (min-width: 1024px) {
 	.ReadMoreWrapper{
@@ -188,22 +196,22 @@ export default {
 	}
 	.leftBorder{
 		border-top: 1.5px solid red;
-		border-left: 1.5px solid red;		
+		border-left: 1.5px solid red;
 		width: 28%;
 		height: 40%;
 	}
 	.rightBorder{
 		border-bottom: 1.5px solid red;
-		border-right: 1.5px solid red;		
+		border-right: 1.5px solid red;
 		width: 28%;
 		height: 40%;
-	}	
+	}
 	.titleLeft{
 		justify-content: flex-start !important;
 	}
 	.titleRight{
 		justify-content: flex-end !important;
-	}	
+	}
 }
 
 </style>

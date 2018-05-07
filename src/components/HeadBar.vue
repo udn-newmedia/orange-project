@@ -4,11 +4,11 @@
             <a href="./index.html"><i class="udn-icon udn-icon-logo" :style="{color: color}"></i></a>
         </div>
         <div id="hbutton-contain" :class="{transformToNone: isOpen}" :style="{transform: menuSlideDirection, backgroundColor: backgroundColor}">
-	    	<div class="scrollTo-Btn" v-for='title in getTitle' :style="{color: color, backgroundColor: backgroundColor, borderColor: color}" @click="handleScrollTo(title.title)">{{title.title}}</div>
+	    	<div class="scrollTo-Btn" v-for="title in getTitle" :style="{color: color, backgroundColor: backgroundColor, borderColor: color}" @click="handleScrollTo(title.title)">{{title.title}}</div>
             <div class="linkOut" :style="{color: color, backgroundColor: backgroundColor}">
 	    		<slot></slot>
 	    	</div>
-            <div id="logo-contain" class="hidden-lg hidden-md">
+            <!-- <div id="logo-contain" class="hidden-lg hidden-md">
                 <div class="logo-block">
                     <div class="logo">
                         <a href="https://udn.com/news/index" target="_blank"><img src="https://udn.com/upf/newmedia/image/udn_logo_2018_v.svg"></a>
@@ -17,7 +17,7 @@
                         <a href="https://udn.com/upf/newmedia/ubrandstudio/?familybar_hide" target="_blank"><img src="https://udn.com/upf/newmedia/image/logo_u_brand.svg"></a>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
         <div class="btnBox">
             <div class="shareBtn" @click='fbShare'>
@@ -28,14 +28,13 @@
             </div>
             <div id="hbutton" class="hidden-lg">
                 <div class="nav-icon" :class="{open: isOpen}"
-                    @click="handleBurger()"
-                >
+                    @click="handleBurger()">
                     <span :style="{backgroundColor: color}"></span>
                     <span :style="{backgroundColor: color}"></span>
                     <span :style="{backgroundColor: color}"></span>
                     <span :style="{backgroundColor: color}"></span>
                 </div>
-            </div>            
+            </div>
         </div>
     </header>
 </template>
@@ -67,7 +66,7 @@ export default {
     methods: {
         iconSrc: function(mob, pc){
             if(window.innerWidth < 1025) {
-                return mob 
+                return mob
             } else {
                 return pc
             }
@@ -131,12 +130,16 @@ export default {
                 "eventAction": "click",
                 "eventLabel": "[" + Utils.detectPlatform() + "] [" + document.querySelector('title').innerHTML + "] [facebook share]"
             });
-        }        
+        }
     },
     created: function() {
         var self = this
         Bus.$on('emitHeadbarTitle', function(msg) {
-            self.getTitle.push(msg)
+            if(msg.title == undefined){
+                return
+            }else {
+              self.getTitle.push(msg)
+            }
             setTimeout(function(){
                 $('.scrollTo-Btn').hover(function(){
                     $(this).css('color', self.backgroundColor)
@@ -145,17 +148,17 @@ export default {
                     $(this).css('color', self.color)
                     $(this).css('background-color', self.backgroundColor)
                 })
-            }, 500)    
+            }, 500)
         })
         window.addEventListener('resize', () => {
             this.$forceUpdate()
             if(window.innerWidth > 1024){
                 this.menuSlideDirection = 'translate(0, 0)'
-            }            
-        })   
+            }
+        })
         if(window.innerWidth > 1024){
             this.menuSlideDirection = 'translate(0, 0)'
-        }             
+        }
         else{
             switch(this.MenuSlideFrom) {
                 case 'top':
@@ -170,13 +173,13 @@ export default {
                 case 'right':
                     this.menuSlideDirection = 'translate(100%, 0)';
                     break;
-                default:    
+                default:
                     this.menuSlideDirection = 'translate(0, -110%)';
-                    console.log("please set value is top, bottom, left or right") 
+                    console.log("please set value is top, bottom, left or right")
                     break;
             }
         }
-        
+
     },
     mounted: function() {
         var self = this
@@ -189,7 +192,7 @@ export default {
                             "eventCategory": "headbar",
                             "eventAction": "click",
                             "eventLabel": "[" + Utils.detectPlatform() + "] [" + document.querySelector('title').innerHTML + "] ["+ self.$slots.default[i].elm.href +"]["+ self.$slots.default[i].elm.innerHTML +"]"
-                        });  				
+                        });
                     })
                 }
             }
@@ -202,7 +205,7 @@ export default {
             $(this).css('background-color', self.backgroundColor)
         })
         window.addEventListener('scroll', this.handleScroll);
-    },    
+    },
 }
 </script>
 <style lang="scss" scoped>
@@ -307,19 +310,19 @@ export default {
         opacity: 1;
         right: 12px;
         transform: rotate(0deg);
-        transition: .66s ease-in-out;        
+        transition: .66s ease-in-out;
     }
     span:nth-child(1){
         top: 12px;
         transition: .44s ease-out;
-        transform-origin: right;    
+        transform-origin: right;
     }
     span:nth-child(2),
     span:nth-child(3){
-        top: 21px;    
+        top: 21px;
     }
     span:nth-child(4){
-        top: 30px;    
+        top: 30px;
         transition: .44s ease-out;
     }
 }
@@ -334,8 +337,8 @@ export default {
         transform: rotate(-45deg);
     }
     span:nth-child(4){
-        width: 0;     
-    }        
+        width: 0;
+    }
 }
 #hbutton-contain {
     position: absolute;
@@ -413,7 +416,7 @@ export default {
         border-bottom: 1px solid #000000;
         margin-top: 1px;
     }
-    
+
 }
 @media screen and (min-width: 1025px) {
     .btnBox{
@@ -425,7 +428,7 @@ export default {
         flex-direction: column;
         align-items: center;
         justify-content: space-between;
-    }    
+    }
     #head-bar {
         height: 50px;
     }
