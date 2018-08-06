@@ -1,8 +1,10 @@
 <template>
   <div id="app">
     <Indicator color='#bf2923'></Indicator>
-    <HeadBar MenuSlideFrom='right' color="#000" background-color="#fff" href='https://udn.com/upf/newmedia/2018_data/orange-project/index.html'></HeadBar>
-    <Cover title="斜槓大人" subtitle="劉軒ｘ褚士瑩" position='bottom' style="background-color: #000" :bg='slash_1_m' :bgweb="slash_1"
+    <HeadBar MenuSlideFrom='right' color="#000" background-color="#fff" href='https://udn.com/upf/newmedia/2018_data/orange-project/index.html'>
+      <a href="https://udn.com/upf/newmedia/2018_data/British-Council_2/" target="_target">大人英語課</a>
+    </HeadBar>
+    <Cover title="斜槓大人" subtitle="褚士瑩 ╳ 劉軒" position='bottom' style="background-color: #000" :bg='slash_1_m' :bgweb="slash_1"
            noShadow="false" color="#fff" useArrow="true">
       <Share href='https://udn.com/upf/newmedia/2018_data/orange-project/index.html'></Share>
     </Cover>
@@ -15,6 +17,7 @@
               position='right' title-color="#fff" fontColor="#000" useReadMore='yes'
               :bg='slash_0_m' :bgweb="slash_0" title="不必一份工作到老" subtitle="斜槓贏回人生主導權" useShadow="true"
               style="background-size: contain;background-color: #E6E6E6;"></ReadMore>
+    <Banner :src="Banner_1" :srcWeb="Banner_1_pc" manufacture="臺中化妝品展" href="http://bit.ly/2GuGODE" expire="2018/06/05"></Banner>
     <ReadMore href="https://udn.com/upf/newmedia/2018_data/slash/chu.html"
               menu-text="褚士瑩熱愛生命"
               position='left' title-color="#fff" fontColor="#000" useReadMore='yes'
@@ -39,7 +42,7 @@
     <GoodLife></GoodLife>
     <ReadMore position='left' title-color="rgba(99,186,134,0.8)" href="https://www.youtube.com/watch?v=IiRwmOCUVLQ" useReadMore='yes'
               :src="video" :srcWeb="videoPC" title="大人young " subtitle="快時尚優雅穿搭術"></ReadMore>
-    <ReadMore class="cusBanner" menu-text="追夢少年人" position='right' href="https://www.youtube.com/watch?v=r16Mke1jUCs&feature=youtu.be" title-color="rgba(99,186,134,0.8)" font-color="#fff" useReadMore='yes' :bg='huananRelate' :bgweb="huananCover" title="華南銀行" subtitle="守護你的初衷"></ReadMore>
+    <ReadMore class="cusBanner" position='right' href="https://www.youtube.com/watch?v=r16Mke1jUCs&feature=youtu.be" title-color="rgba(99,186,134,0.8)" font-color="#fff" useReadMore='yes' :bg='huananRelate' :bgweb="huananCover" title="華南銀行" subtitle="守護你的初衷"></ReadMore>
     <Content background-color="#FFFFFF">
         <p><br/></p>
         <Share href="https://udn.com/upf/newmedia/2018_data/orange-project/index.html"></Share>
@@ -53,7 +56,7 @@
             <div>攝影：林俊良、徐兆玄、陳柏亨、侯永全</div>
             <div>圖片來源：<a href="https://tw.123rf.com/" style="color: gray;text-decoration: none" target="_blank">123RF</a></div>
             <div>監製：董谷音、蔡幸怡、潘如瑩</div>
-            <div>議題行銷：張乃文、陳欣媛</div>
+            <div>議題行銷：張乃文、陳欣媛、蔡嘉棋</div>
             <div>2018.05.15</div>
         </Editor>
         <p><br/></p>
@@ -114,10 +117,13 @@ import relate_4 from './assets/relate_4.jpg'
 import huananCover from './assets/bank_ad/AD_.jpg'
 import huananRelate from './assets/bank_ad/huanan_relate_ad.jpg'
 
-import ImgBanner from './assets/banner.jpg'
+// import ImgBanner from './assets/banner.jpg'
 
 import video from './assets/oldvideo_mob.mp4'
 import video_pc from './assets/oldmanvideo2_30s.mp4'
+
+import Banner_1 from './assets/banner/Banner_mobile02.jpg'
+import Banner_1_pc from './assets/banner/Banner_web02.jpg'
 
 export default {
   name: 'App',
@@ -140,7 +146,9 @@ export default {
   },
   data() {
     return{
-      ImgBanner: ImgBanner,
+      // ImgBanner: ImgBanner,
+      Banner_1: Banner_1,
+      Banner_1_pc: Banner_1_pc,
       people_1: people_1,
       people_2: people_2,
       people_3: people_3,

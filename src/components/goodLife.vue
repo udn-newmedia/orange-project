@@ -2,24 +2,24 @@
 	<div class="mainPage" :id="menuText">
 		<h2>如何過熟齡理想生活</h2>
 		<div class="btnBox">
-			<div class="circularBtn" v-for="(btn, index) in btnBox" @click="sendGA(index)"  @mouseenter="handle_mouseenter(index)" @mouseleave="handle_mouseleave(index)"> 
+			<div class="circularBtn" v-for="(btn, index) in btnBox" @click="sendGA(index)"  @mouseenter="handle_mouseenter(index)" @mouseleave="handle_mouseleave(index)">
 				<a :href="btn.link" target="_blank">
 					<img :src="btn.img" :class="{isScale: btn.isScale}" title="點我看報導" class="bigImg">
 				</a>
 				<a :href="btn.link" target="_blank">
 					<div class="slogenWrapper">
 						<div class="slogen">
-							<p>{{btn.text}}</p>	
-							<p>{{btn.text2}}</p>						
+							<p>{{btn.text}}</p>
+							<p>{{btn.text2}}</p>
 						</div>
 						<div class="slogenArrow">
 							<img src="../assets/btn_in.png">
-						</div>						
+						</div>
 					</div>
 				</a>
-			</div>						
-		</div>												
-	</div>	
+			</div>
+		</div>
+	</div>
 </template>
 
 <script>
@@ -48,7 +48,7 @@ export default {
     			original: btn4_1_a,
     			hover: btn4_1Hover,
     			// hover: btn4_1_a,
-    			// original: btn4_1Hover,    			
+    			// original: btn4_1Hover,
     			isScale: false,
     			text: '熟齡不忌口',
     			text2: '改善肌少症'
@@ -60,7 +60,7 @@ export default {
     			original: btn4_2_a,
     			hover: btn4_2Hover,
     			// hover: btn4_2_a,
-    			// original: btn4_2Hover,       			
+    			// original: btn4_2Hover,
     			isScale: false,
     			text: '銀髮老來俏',
     			text2: '穿出新活力'
@@ -71,7 +71,7 @@ export default {
     			original: btn4_3_a,
     			hover: btn4_3Hover,
     			// hover: btn4_3_a,
-    			// original: btn4_3Hover,       			
+    			// original: btn4_3Hover,
     			isScale: false,
     			text: '住得好安心',
     			text2: '居家微改造'
@@ -83,7 +83,7 @@ export default {
     			original: btn4_4_a,
     			hover: btn4_4Hover,
     			// hover: btn4_4_a,
-    			// original: btn4_4Hover,       			
+    			// original: btn4_4Hover,
     			isScale: false,
     			text: '長輩趴趴走',
     			text2: '細節要周全'
@@ -93,12 +93,10 @@ export default {
   },
   methods: {
   	handle_mouseenter: function(i) {
-  		console.log('enter')
   		this.btnBox[i].img = this.btnBox[i].hover
   		this.btnBox[i].isScale = true
   	},
   	handle_mouseleave: function(i) {
-  		console.log('leave')
   		this.btnBox[i].img = this.btnBox[i].original
   		this.btnBox[i].isScale = false
   	},
@@ -115,7 +113,7 @@ export default {
             "eventCategory": "超連結",
             "eventAction": "click",
             "eventLabel": "[" + Utils.detectPlatform() + "] [" + document.querySelector('title').innerHTML + "] [" + self.btnBox[i].link + "] ["+ self.btnBox[i].text +"]"
-        });   	
+        });
     }
   },
   mounted() {
@@ -183,7 +181,7 @@ p > br {
 	// border: 3.5px solid #ffbe69;
 	// border-radius: 15px 0 0 15px;
 	border-right: none;
-	height: 90px; 
+	height: 90px;
 }
 .slogenArrow{
 	height: 100%;
@@ -191,11 +189,11 @@ p > br {
 	align-items: center;
 	// border: 3.5px solid #ffbe69;
 	// border-radius: 0 15px 15px 0;
-	border-left: none;	
+	border-left: none;
 	padding-right: 5px;
 	img{
 		width: 90%;
-		max-height: 100%; 
+		max-height: 100%;
 		padding: 5px;
 		margin-bottom: 0 !important;
 	}
@@ -229,14 +227,14 @@ p > br {
 	.slideItem{
 		img{
 			width: 40%;
-			left: 30%;			
+			left: 30%;
 		}
 	}
 	.circularBtn{
 		.bigImg{
 			padding: 15%;
 		}
-	}	
+	}
 	.slogenWrapper{
 		justify-content: center;
 	}
@@ -251,7 +249,7 @@ p > br {
 		margin-bottom: 40px;
 	}
 	p{
-		text-align: center;		
+		text-align: center;
 		font-size: 20px;
 		line-height: 36px;
 	}
@@ -272,16 +270,16 @@ p > br {
 	}
 	p > br {
 		ling-height: 50px;
-	}	
+	}
 	.btnBox{
 		margin: 0 auto;
 		max-width: 1200px;
-	}	
+	}
 	.mainPage{
 		justify-content: center;
 		padding-top: 0;
 		height: 100vh;
-	}	
+	}
 	.circularBtn{
 		position: relative;
 		top: 0;
@@ -293,12 +291,12 @@ p > br {
 		.bigImg{
 			padding: 12.5%;
 		}
-	}	
+	}
 	.slogen{
 		padding-left: 20px;
 	}
 	.slogenArrow{
 		padding-right: 20px;
-	}	
-}	
+	}
+}
 </style>
