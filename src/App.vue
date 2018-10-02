@@ -1,63 +1,187 @@
 <template>
   <div id="app">
     <Indicator color='#bf2923'></Indicator>
-    <HeadBar MenuSlideFrom='right' color="#000" background-color="#fff" href='https://udn.com/upf/newmedia/2018_data/orange-project/index.html'>
-      <a href="https://udn.com/upf/newmedia/2018_data/British-Council_2/" target="_target">大人英語課</a>
+    <HeadBar 
+      MenuSlideFrom='right' 
+      color="#000" 
+      background-color="#fff" 
+      href='https://udn.com/upf/newmedia/2018_data/orange-project/index.html'>
+      <a href="https://udn.com/upf/newmedia/2018_data/British-Council_2/" target="_target">
+        大人英語課
+      </a>
     </HeadBar>
-    <Cover title="斜槓大人" subtitle="褚士瑩 ╳ 劉軒" position='bottom' style="background-color: #000" :bg='slash_1_m' :bgweb="slash_1"
-           noShadow="false" color="#fff" useArrow="true">
+    <AddMenuTitle
+      menu-text="多值人生">
+    </AddMenuTitle>
+    <Cover 
+      title="" 
+      subtitle="" 
+      position='top' 
+      style="background-color: #000" 
+      :bg='cover_new_1_m' 
+      :bgweb="cover_new_1"
+      noShadow="false" 
+      color="#fff" 
+      useArrow="true">
+      <div class="title-wrapper">
+        <div class="vertical-title-wrapper-left" style="background-color: #fff600">
+          <p class="vertical-title-left">
+            熟齡３大關鍵力 &nbsp&nbsp            
+          </p>
+        </div>
+        <div class="vertical-title-wrapper-right" style="background-color: #fff600">
+          <p class="vertical-title-right">
+            開啟多值人生 &nbsp&nbsp
+          </p>
+        </div>
+      </div>
+    </Cover>
+
+    <Content background-color="#fff" style="padding-bottom: 0 !important" class="cusContent">
+      <Share href="https://udn.com/upf/newmedia/2018_data/orange-project/index.html"></Share>
+      <p><br/></p>
+      <p>面對50歲以後的人生，你打算怎麼過？在兼顧家庭與事業後，人生達到相對巔峰。從現在開始，生活重心不再只有工作，而是用更開闊的心、多方嘗試，發掘潛在可能，實現未完成的理想，退休不再是唯一選擇。</p>
+      <p><br/></p>
+      <p>在探索新生活的同時，不僅自我實現、認同，也能創造對他人有意義的價值，開啟豐富的多值人生。</p>
+      <p><br/></p>
+      <p><br/></p>
+    </Content>
+    <!-- <DFPads></DFPads> -->
+
+    <ReadMore2 
+      href="https://udn.com/upf/newmedia/2018_data/orange-project/mature/shen.html"
+      menu-text="沈春華勇敢歸零"
+      position='right' 
+      title-color="#fff" 
+      fontColor="#000" 
+      useReadMore='yes'
+      :bg='slash_new_1_m' 
+      :bgweb="slash_new_1" 
+      title="行經谷底 看見另一道風景" 
+      subtitle="沈春華：活得精彩 是給兒女的重要資產" 
+      useShadow="true"
+      style="background-size: contain; background-color: #eeeeee;">
+    </ReadMore2>
+    <ReadMore2 
+      href="https://udn.com/upf/newmedia/2018_data/orange-project/mature/wu.html"
+      menu-text="吳明珠熱愛工作"
+      position='left' 
+      title-color="#fff" 
+      fontColor="#000" 
+      useReadMore='yes'
+      :bg='slash_new_2_m' 
+      :bgweb="slash_new_2" 
+      title="快60歲美魔女 逆齡生長像少女" 
+      subtitle="吳明珠：愛吃愛玩愛工作 退休還早咧" 
+      useShadow="true"
+      style="background-size: contain; background-color: #ffffff;">
+    </ReadMore2>
+    <ReadMore2 
+      href="https://udn.com/upf/newmedia/2018_data/orange-project/mature/huang.html"
+      menu-text="熟齡3大關鍵力"
+      position='right' 
+      title-color="#fff" 
+      fontColor="#000" 
+      useReadMore='yes'
+      :bg='slash_new_3_m' 
+      :bgweb="slash_new_3" 
+      title="掌握３大關鍵" 
+      subtitle="黃培直：開啟橘色世代的多值人生" 
+      useShadow="true"
+      style="background-size: contain; background-color: #eeeeee;">
+    </ReadMore2>
+    <div id="slash"></div>
+    <Cover 
+      title="斜槓大人" 
+      subtitle="褚士瑩 ╳ 劉軒" 
+      position='bottom' 
+      style="background-color: #000" 
+      :bg='slash_1_m' 
+      :bgweb="slash_1"
+      noShadow="false" color="#fff" useArrow="true">
       <Share href='https://udn.com/upf/newmedia/2018_data/orange-project/index.html'></Share>
     </Cover>
     <Content background-color="#E6E6E6" style="padding-bottom: 0 !important" class="cusContent">
       <p>全球年輕人瘋斜槓人生，不滿於單一工作做到老。但斜槓是年輕人的專利嗎？斜槓需要幾分的本錢、幾分的勇敢。台灣的斜槓標竿人物褚士瑩、劉軒都說，需要的是坦誠面對自己，什麼樣的人生才不後悔？</p>
     </Content>
-    <!-- <DFPads></DFPads> -->
-    <ReadMore href="https://udn.com/upf/newmedia/2018_data/slash/talk.html"
-              menu-text="多職對談"
-              position='right' title-color="#fff" fontColor="#000" useReadMore='yes'
-              :bg='slash_0_m' :bgweb="slash_0" title="不必一份工作到老" subtitle="斜槓贏回人生主導權" useShadow="true"
-              style="background-size: contain;background-color: #E6E6E6;"></ReadMore>
+    <ReadMore2 
+      href="https://udn.com/upf/newmedia/2018_data/slash/talk.html"
+      menu-text="斜槓大人"
+      position='right' 
+      title-color="#fff" 
+      fontColor="#000" 
+      useReadMore='yes'
+      :bg='slash_0_m' 
+      :bgweb="slash_0" 
+      title="不必一份工作到老" 
+      subtitle="斜槓贏回人生主導權" 
+      useShadow="true"
+      style="background-size: contain;background-color: #E6E6E6;">
+    </ReadMore2>
     <Banner :src="Banner_1" :srcWeb="Banner_1_pc" manufacture="臺中化妝品展" href="http://bit.ly/2GuGODE" expire="2018/06/05"></Banner>
-    <ReadMore href="https://udn.com/upf/newmedia/2018_data/slash/chu.html"
-              menu-text="褚士瑩熱愛生命"
-              position='left' title-color="#fff" fontColor="#000" useReadMore='yes'
-              :bg='slash_2_m' :bgweb="slash_2" title="人生不想單一" subtitle="褚士瑩：你需要勇氣與練習" useShadow="true"
-              style="background-size: contain"></ReadMore>
-    <ReadMore href="https://udn.com/upf/newmedia/2018_data/slash/liu.html"
-              menu-text="劉軒設計人生"
-              position='right' title-color="#fff" fontColor="#000" useReadMore='yes'
-              :bg='slash_3_m' :bgweb="slash_3" title="隔行不隔山" subtitle="劉軒：用同理心穿別人的鞋走 一哩路" useShadow="true"
-              style="background-size: contain; background-color: #55CAF5"></ReadMore>
-    <Cover title="回甘大人" subtitle="熟齡的新生活學" position='bottom' style="background-color: #000" :bg='cover_1_m' :bgweb="cover_1" menuText="回甘大人">
+    <ReadMore2 
+      href="https://udn.com/upf/newmedia/2018_data/slash/chu.html"
+      position='left' 
+      title-color="#fff" 
+      fontColor="#000" 
+      useReadMore='yes'
+      :bg='slash_2_m' 
+      :bgweb="slash_2" 
+      title="人生不想單一" 
+      subtitle="褚士瑩：你需要勇氣與練習" 
+      useShadow="true"
+      style="background-size: contain">
+    </ReadMore2>
+    <ReadMore2 
+      href="https://udn.com/upf/newmedia/2018_data/slash/liu.html"
+      position='right' 
+      title-color="#fff" 
+      fontColor="#000" 
+      useReadMore='yes'
+      :bg='slash_3_m' 
+      :bgweb="slash_3" 
+      title="隔行不隔山" 
+      subtitle="劉軒：用同理心穿別人的鞋走 一哩路" 
+      useShadow="true"
+      style="background-size: contain; background-color: #55CAF5">
+    </ReadMore2>
+    <Cover 
+      title="回甘大人" 
+      subtitle="熟齡的新生活學" 
+      position='bottom' 
+      style="background-color: #000" 
+      :bg='cover_1_m' 
+      :bgweb="cover_1" 
+      menuText="回甘大人">
       <div id="relife" slot="anchor"></div>
     </Cover>
-    <ReadMore position='right' href="https://theme.udn.com/theme/story/6774/2994070" title-color="rgba(99,186,134,0.8)" fontColor="#fff" useReadMore='yes'
-              :bg='cover_3_m' :bgweb="cover_3" title="橘色世代滑出存在感" subtitle="渴望「向下認同」"></ReadMore>
-    <ReadMore position='left' title-color="rgba(99,186,134,0.8)" href="https://theme.udn.com/theme/story/6774/2994101" useReadMore='yes'
-              :bg='cover_2_m' :bgweb="cover_2" title="練肌肉、穿韓版服飾 " subtitle="不服老的回甘人生"></ReadMore>
+    <ReadMore2 position='right' href="https://theme.udn.com/theme/story/6774/2994070" title-color="rgba(99,186,134,0.8)" fontColor="#fff" useReadMore='yes'
+              :bg='cover_3_m' :bgweb="cover_3" title="橘色世代滑出存在感" subtitle="渴望「向下認同」"></ReadMore2>
+    <ReadMore2 position='left' title-color="rgba(99,186,134,0.8)" href="https://theme.udn.com/theme/story/6774/2994101" useReadMore='yes'
+              :bg='cover_2_m' :bgweb="cover_2" title="練肌肉、穿韓版服飾 " subtitle="不服老的回甘人生"></ReadMore2>
     <PhotoLink title="名人的理想生活" imgStart="left"
     :img1="people_1" mainTitle1='李昂'   subTitle1='老後生活<br/>你儲存愛情了嗎?'    href1='https://theme.udn.com/theme/story/6774/2992791'
     :img2='people_2' mainTitle2='岑永康' subTitle2='空巢期到南美洲<br/>來場拉丁式冒險' href2='https://theme.udn.com/theme/story/6774/2992969'
     :img3='people_3' mainTitle3='陳建仁' subTitle3='遠離「失重感」<br/>退休也要有夢' href3='https://theme.udn.com/theme/story/6774/2994560'></PhotoLink>
     <GoodLife></GoodLife>
-    <ReadMore position='left' title-color="rgba(99,186,134,0.8)" href="https://www.youtube.com/watch?v=IiRwmOCUVLQ" useReadMore='yes'
-              :src="video" :srcWeb="videoPC" title="大人young " subtitle="快時尚優雅穿搭術"></ReadMore>
-    <ReadMore class="cusBanner" position='right' href="https://www.youtube.com/watch?v=r16Mke1jUCs&feature=youtu.be" title-color="rgba(99,186,134,0.8)" font-color="#fff" useReadMore='yes' :bg='huananRelate' :bgweb="huananCover" title="華南銀行" subtitle="守護你的初衷"></ReadMore>
+    <ReadMore2 position='left' title-color="rgba(99,186,134,0.8)" href="https://www.youtube.com/watch?v=IiRwmOCUVLQ" useReadMore='yes'
+              :src="video" :srcWeb="videoPC" title="大人young " subtitle="快時尚優雅穿搭術"></ReadMore2>
+    <ReadMore2 class="cusBanner" position='right' href="https://www.youtube.com/watch?v=r16Mke1jUCs&feature=youtu.be" title-color="rgba(99,186,134,0.8)" font-color="#fff" useReadMore='yes' :bg='huananRelate' :bgweb="huananCover" title="華南銀行" subtitle="守護你的初衷"></ReadMore2>
     <Content background-color="#FFFFFF">
         <p><br/></p>
         <Share href="https://udn.com/upf/newmedia/2018_data/orange-project/index.html"></Share>
         <Logo></Logo>
         <p><br/></p>
         <Editor>
-            <div>製作人：吳思萍、林秀姿、蔡佩蓉</div>
-            <div>視覺設計：張心慈</div>
-            <div>網頁製作：廖克樸</div>
-            <div>影音：張心慈、蘇士堯、舒懷緯</div>
+            <div>製作人：吳思萍、林秀姿、蔡佩蓉、盧巧梅、蘇彥菱</div>
+            <div>視覺設計：張心慈、許瑋琳</div>
+            <div>網頁製作：廖克樸、楊若榆</div>
+            <div>影音：張心慈、蘇士堯、舒懷緯、許瑋琳</div>
             <div>攝影：林俊良、徐兆玄、陳柏亨、侯永全</div>
             <div>圖片來源：<a href="https://tw.123rf.com/" style="color: gray;text-decoration: none" target="_blank">123RF</a></div>
-            <div>監製：董谷音、蔡幸怡、潘如瑩</div>
-            <div>議題行銷：張乃文、陳欣媛、蔡嘉棋</div>
-            <div>2018.05.15</div>
+            <div>監製：董谷音、蔡幸怡、潘如瑩、陳曼薇</div>
+            <div>議題行銷：張乃文、陳欣媛、蔡嘉棋、王敏霏</div>
+            <div>2018.08.28</div>
         </Editor>
         <p><br/></p>
         <Relate title="延伸閱讀" color="#363434"
@@ -76,11 +200,13 @@
 <script>
 import {Indicator, Share, Content, Foot, FbComment, Editor} from 'udn-newmedia-vue-components'
 import Relate from './components/Relate.vue'
+import AddMenuTitle from './components/AddMenuTitle.vue'
 import Banner from './components/banner.vue'
 import GoodLife from './components/goodLife.vue'
 import Cover from './components/Cover.vue'
 import HeadBar from './components/HeadBar.vue'
 import ReadMore from './components/ReadMore.vue'
+import ReadMore2 from './components/ReadMore2.vue'
 import PhotoLink from './components/PhotoLink.vue'
 import DFPads from './components/DFPads'
 import Logo from './components/Logo.vue'
@@ -98,6 +224,16 @@ import slash_0_m from './assets/slash/0502update_phone-talk-Cover.jpg'
 import slash_1_m from './assets/slash/slash_1.jpg'
 import slash_2_m from './assets/slash/slash_2.jpg'
 import slash_3_m from './assets/slash/slash_3.jpg'
+
+
+import slash_new_1 from './assets/mature/w1.jpg'
+import slash_new_2 from './assets/mature/w2.jpg'
+import slash_new_3 from './assets/mature/w3.jpg'
+import slash_new_1_m from './assets/mature/m1.jpg'
+import slash_new_2_m from './assets/mature/m2.jpg'
+import slash_new_3_m from './assets/mature/m3.jpg'
+import cover_new_1 from './assets/mature/mature_wbg.jpg'
+import cover_new_1_m from './assets/mature/mature_mbg.jpg'
 
 import cover_1 from './assets/slash/pc/web_img_4.jpg'
 import cover_2 from './assets/cover_2.jpg'
@@ -128,6 +264,7 @@ import Banner_1_pc from './assets/banner/Banner_web02.jpg'
 export default {
   name: 'App',
   components: {
+    AddMenuTitle,
     Banner,
     Cover,
     Content,
@@ -140,6 +277,7 @@ export default {
     Foot,
     Indicator,
     ReadMore,
+    ReadMore2,
     Relate,
     Share,
     PhotoLink
@@ -160,6 +298,16 @@ export default {
       slash_1_m: slash_1_m,
       slash_2_m: slash_2_m,
       slash_3_m: slash_3_m,
+
+      slash_new_1: slash_new_1,
+      slash_new_2: slash_new_2,
+      slash_new_3: slash_new_3,
+      slash_new_1_m: slash_new_1_m,
+      slash_new_2_m: slash_new_2_m,
+      slash_new_3_m: slash_new_3_m,
+      cover_new_1: cover_new_1,
+      cover_new_1_m: cover_new_1_m,
+      
       cover_1: cover_1,
       cover_2: cover_2,
       cover_3: cover_3,
@@ -174,10 +322,18 @@ export default {
       relate_4: relate_4,
       video: video,
       videoPC: video_pc,
+      
       huananCover,
-      huananRelate
+      huananRelate,
+
+      menu_title_order: ["多值人生", "熟齡３大關鍵力", "沈春華勇敢歸零", "吳明珠熱愛工作", "斜槓大人", "回甘大人", "大人英語課"]
     }
   },
+  mounted: function(){
+    var temp = 
+    console.log($("#hbutton-contain")[0].children);
+    
+  }
 }
 </script>
 
@@ -190,6 +346,40 @@ export default {
   text-align: justify;
   height: 100vh;
   width: 100%;
+}
+.title-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateX(-3vw) translateY(3vh);
+}
+.vertical-title-wrapper-right {
+  width: 42px;
+  margin: 5px;
+  transform: translateY(-8em);
+}
+.vertical-title-wrapper-left {
+  width: 32px;
+  margin: 5px;
+  transform: translateY(-4em);
+}
+.vertical-title-right {
+  font-size: 34px;
+  line-height: 1;
+  white-space:nowrap;
+  color: #000;
+  -webkit-writing-mode: vertical-lr;
+  writing-mode: vertical-lr;
+  transform: translateX(8px) translateY(10px);
+}
+.vertical-title-left {
+  font-size: 22px;
+  line-height: 1;
+  white-space:nowrap;
+  color: #000;
+  -webkit-writing-mode: vertical-lr;
+  writing-mode: vertical-lr;
+  transform: translateX(8px) translateY(10px);
 }
 .cusBanner{
   background-size: contain !important;
@@ -207,10 +397,36 @@ export default {
   z-index: -100;
   background-color: transparent;
 }
+@media screen and (min-width: 768px) and (max-width: 1023px){
+.title-wrapper {
+  transform: translateX(20vw) translateY(3vh);
+}
+}
 @media screen and (min-width: 1024px){
   .cusBanner{
     background-size: auto 100% !important;
     background-position: center 50px !important;
+  }
+  .title-wrapper {
+    transform: translateX(37vw);
+  }
+  .vertical-title-wrapper-right {
+    width: 5.3em;
+    margin: 10px;
+    transform: translateY(-8em);
+  }
+  .vertical-title-wrapper-left {
+    width: 3.6em;
+    margin: 10px;
+    transform: translateY(-2em);
+  }
+  .vertical-title-right {
+    font-size: 3.8em;
+    transform: translateX(0.38em) translateY(10px);
+  }
+  .vertical-title-left {
+    font-size: 2.6em;
+    transform: translateX(0.36em) translateY(10px);
   }
 }
 </style>

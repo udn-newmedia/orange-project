@@ -4,7 +4,13 @@
             <a href="./index.html"><i class="udn-icon udn-icon-logo" :style="{color: color}"></i></a>
         </div>
         <div id="hbutton-contain" :class="{transformToNone: isOpen}" :style="{transform: menuSlideDirection, backgroundColor: backgroundColor}">
-	    	<div class="scrollTo-Btn" v-for="title in getTitle" :style="{color: color, backgroundColor: backgroundColor, borderColor: color}" @click="handleScrollTo(title.title)">{{title.title}}</div>
+	    	<div 
+                class="scrollTo-Btn" 
+                v-for="title in getTitle" 
+                :style="{color: color, backgroundColor: backgroundColor, borderColor: color}" 
+                @click="handleScrollTo(title.title)">
+                {{title.title}}
+            </div>
             <div class="linkOut" :style="{color: color, backgroundColor: backgroundColor}">
 	    		<slot></slot>
 	    	</div>
@@ -134,7 +140,7 @@ export default {
     },
     created: function() {
         var self = this
-        Bus.$on('emitHeadbarTitle', function(msg) {
+        Bus.$on('emitHeadbarTitle', function(msg) {          
             if(msg.title == undefined){
                 return
             }else {
@@ -149,6 +155,25 @@ export default {
                     $(this).css('background-color', self.backgroundColor)
                 })
             }, 500)
+        })
+        
+        Bus.$on('emitHeadbarOutlinkTitle', function(msg) {                      
+            if(msg.title == undefined){
+                return
+            }else {
+              self.getTitle.push(msg)
+            }
+
+
+            // setTimeout(function(){
+            //     $('a').hover(function(){
+            //         $(this).css('color', self.backgroundColor)
+            //         $(this).css('background-color', self.color)
+            //     }, function(){
+            //         $(this).css('color', self.color)
+            //         $(this).css('background-color', self.backgroundColor)
+            //     })
+            // }, 500)
         })
         window.addEventListener('resize', () => {
             this.$forceUpdate()
